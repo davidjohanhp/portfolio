@@ -10,7 +10,7 @@ class About extends React.Component {
                     <div>
                         <h2 className="text-start font-semibold text-gray-900 sm:text-9xl">3rd<span className="sm:text-3xl">Year</span></h2>
                         <h2 className="text-start font-semibold text-gray-900 sm:text-3xl">Information Systems Student,</h2>
-                        <h2 className="text-start font-semibold text-gray-900 sm:text-3xl">Universitas Indonesia</h2>
+                        <h2 className="text-start font-semibold text-amber-300 sm:text-3xl">Universitas Indonesia</h2>
                     </div>
                     <div>
                         <h2 className="text-start font-semibold text-gray-900 sm:text-3xl">Experienced in</h2>
