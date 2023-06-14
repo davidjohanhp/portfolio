@@ -1,6 +1,7 @@
 import React from "react";
 import { Element } from "react-scroll";
 import Slider from "react-slick";
+import './about.css';
 
 import html from "../img/tech-icons/html-logo.png";
 import css from "../img/tech-icons/css-logo.png";
@@ -87,12 +88,14 @@ class About extends React.Component {
                     </div>
                     <div>
                         <h2 className="text-start font-semibold text-gray-900 sm:text-3xl">Experienced in</h2>
-                        <div className="pt-4 h-max mx-auto">
+                        <div className="pt-4">
                                 <Slider {...this.settings}>
                                     {this.state.images.map(image => {
                                         return (
-                                            <div className="">
-                                                <img src={image} className="max-h-32 object-fit"/>
+                                            <div className="slick-slide">
+                                                <div className="skills">
+                                                    <img src={image} className="max-h-32 object-fit"/>
+                                                </div>
                                             </div>
                                             );
                                         })}
