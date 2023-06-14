@@ -31,7 +31,7 @@ class Navbar extends React.Component {
                             <div className="mr-10 flex items-baseline space-x-1">
                                 {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
                                 {/* <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a> */}
-                                <button className="text-gray hover:text-cyan-600 rounded-md px-3 py-2 text-xl">
+                                <button className="text-gray hover:text-cyan-600 rounded-md px-3 py-2 text-lg">
                                     <Link
                                         activeClass="text-cyan-600"
                                         to="home"
@@ -43,7 +43,7 @@ class Navbar extends React.Component {
                                         Home
                                     </Link>
                                 </button>
-                                <button className="text-gray hover:text-cyan-600 rounded-md px-3 py-2 text-xl">
+                                <button className="text-gray hover:text-cyan-600 rounded-md px-3 py-2 text-lg">
                                     <Link
                                         activeClass="text-cyan-600"
                                         to="about"
@@ -66,7 +66,7 @@ class Navbar extends React.Component {
                                         Skills
                                     </Link>
                                 </a> */}
-                                <button className="text-gray hover:text-cyan-600 rounded-md px-3 py-2 text-xl">
+                                <button className="text-gray hover:text-cyan-600 rounded-md px-3 py-2 text-lg">
                                     <Link
                                         activeClass="text-cyan-600"
                                         to="projects"
@@ -78,7 +78,7 @@ class Navbar extends React.Component {
                                         Projects
                                     </Link>
                                 </button>
-                                <button className="text-gray hover:text-cyan-600 rounded-md px-3 py-2 text-xl">
+                                <button className="text-gray hover:text-cyan-600 rounded-md px-3 py-2 text-lg">
                                     <Link
                                         activeClass="text-cyan-600"
                                         to="contact"

@@ -12,6 +12,7 @@ import Contact from './components/contact';
 import Footer from './components/footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+document.title = 'David Johan';
 root.render(
   <React.StrictMode>
     {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20" />
