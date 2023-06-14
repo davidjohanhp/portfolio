@@ -18,6 +18,16 @@ import rumahsehatmob_makeappointment from "../img/projects/rumahsehat-mobile/mak
 import rumahsehatmob_appointmentsuccess from "../img/projects/rumahsehat-mobile/appointmentsuccess.png";
 import rumahsehatmob_detailappointment from "../img/projects/rumahsehat-mobile/detailappointment.png";
 
+import login from "../img/projects/plabs/login.png"
+import dashboard_admin from "../img/projects/plabs/dashboard_admin.png"
+import dashboard_admin_2 from "../img/projects/plabs/dashboard_admin_2.png"
+import dashboard_staff from "../img/projects/plabs/dashboard_staff.png"
+import ac_staff from "../img/projects/plabs/ac_staff.png"
+import attendance_admin from "../img/projects/plabs/attendance_admin.png"
+import attendance_admin_2 from "../img/projects/plabs/attendance_admin_2.png"
+import employee_admin from "../img/projects/plabs/employee_admin.png"
+import leave_admin from "../img/projects/plabs/leave_admin.png"
+
 import { FaBeer, FaGithub } from 'react-icons/fa';
 
 const CustomArrow = (props) => {
@@ -39,17 +49,23 @@ class Projects extends React.Component {
         this.state = {
           projects: [
             {
-                id: "RumahSehat Website",
-                desc: "RumahSehat is a website designated for hospital staffs that provides features to support hospitals or clinics such as maintaining appointments, \
-                viewing bills, viewing recipes, and viewing upcoming appointments.",
-                repo: "https://gitlab.cs.ui.ac.id/david.johan/ta_a_ori_55/-/tree/main/rumahSehat",
+                id: "Emplova - HR Management System",
+                desc: "An application for PLABS.id that provides features such as attendance management, location based absent, \
+                payroll management, salary slip document generator, activity reports, and more.\
+                Responsible as Lead Programmer on managing and controlling 4 teammates on development process.",
+                repo: "",
                 images: [
-                    rumahsehatweb_login,
-                    rumahsehatweb_home,
-                    rumahsehatweb_chart
+                    login,
+                    dashboard_admin,
+                    dashboard_admin_2,
+                    dashboard_staff,
+                    ac_staff,
+                    attendance_admin,
+                    attendance_admin_2,
+                    employee_admin,
+                    leave_admin
                 ],
                 stacks: [
-                    <FaBeer size={25}/>,
                     <FaBeer size={25}/>
                 ],
                 settings: this.settings
@@ -73,7 +89,23 @@ class Projects extends React.Component {
                     <FaBeer size={25}/>
                 ],
                 settings: this.settingsMobile
-            }
+            },
+            {
+                id: "RumahSehat Website",
+                desc: "RumahSehat is a website designated for hospital staffs that provides features to support hospitals or clinics such as maintaining appointments, \
+                viewing bills, viewing recipes, and viewing upcoming appointments.",
+                repo: "https://gitlab.cs.ui.ac.id/david.johan/ta_a_ori_55/-/tree/main/rumahSehat",
+                images: [
+                    rumahsehatweb_login,
+                    rumahsehatweb_home,
+                    rumahsehatweb_chart
+                ],
+                stacks: [
+                    <FaBeer size={25}/>,
+                    <FaBeer size={25}/>
+                ],
+                settings: this.settings
+            },
           ]
         };
       }
@@ -100,7 +132,7 @@ class Projects extends React.Component {
 
     render() {
       return (
-        <div id="projects" className="flex h-screen justify-center items-center">
+        <div id="projects" className="flex h-fit justify-center items-center py-36">
             <div className="mx-auto w-3/5">
                 <h1 className="text-center font-semibold text-gray-900 sm:text-7xl">Projects</h1>
                 <div className="grid grid-cols-2 gap-4 pt-10">
@@ -121,8 +153,8 @@ class Projects extends React.Component {
                                 <div className="flex flex-col">
                                     <div className="flex-grow">
                                         <div className="flex items-center">
-                                            <h2 className="text-start font-semibold text-gray-900 sm:text-xl pr-2">{content.id}</h2> 
-                                            <a href={content.repo} title="Github" target="_blank">
+                                            <h2 className="text-start font-semibold text-gray-900 sm:text-xl pr-2">{content.id}</h2>
+                                            <a href={content.repo} title="Github" target="_blank" className={content.repo == "" ? 'hidden' : ''}>
                                                 <FaGithub size={20} /> 
                                             </a>
                                         </div>

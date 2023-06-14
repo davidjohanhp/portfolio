@@ -7,9 +7,9 @@ class Contact extends React.Component {
             <div className="mx-auto w-3/5">
                 <h1 className="text-center font-semibold text-gray-900 sm:text-7xl">Contact</h1>
                 <p className="text-center mt-2 text-lg text-gray-600">
-                    Aute magna irure deserunt veniam aliqua magna enim voluptate.
+                    Interested on working with me?
                 </p>
-                <form action="https://formspree.io/f/xvongnaw" method="POST" className="mx-auto mt-10 max-w-xl sm:mt-10">
+                <form action="https://formspree.io/f/xvongnaw" method="POST" className="mx-auto pt-5 max-w-xl sm:pt-5">
                     <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                         <div>
                             <label className="block text-sm font-semibold leading-6 text-gray-900">

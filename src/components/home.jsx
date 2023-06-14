@@ -10,7 +10,7 @@ class Home extends React.Component {
             <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" /> */}
             <div className="mx-auto w-3/4">
                 <div className="grid grid-cols-2 gap-4 content-center">
-                    <div className="grid grid-cols-1 gap-4 content-center">
+                    <div className="grid grid-cols-1 gap-4 content-center animate-in motion-safe:spin-in-90 duration-700">
                         <h1 className="text-start font-semibold leading-15 text-gray-900 sm:text-7xl sm:leading-15">Hello, I am <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-500">David</span></h1>
                         <TypeAnimation
                             sequence={[
@@ -31,7 +31,7 @@ class Home extends React.Component {
                             <p>Check My WOrk</p>
                         </div> */}
                     </div>
-                    <div className="grid place-items-center">
+                    <div className="grid place-items-center animate-in motion-safe:spin-in-90 duration-700">
                         <img src={myPhoto} className="rounded w-4/5"></img>
                     </div>
                 </div>

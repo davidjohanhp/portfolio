@@ -23,36 +23,38 @@ class Navbar extends React.Component {
   render() {
     return (
         <>
-        <nav class="bg-white sticky top-0 z-50">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="flex h-16 items-center justify-end">
-                    <div class="flex items-center">
-                        <div class="hidden md:block">
-                            <div class="mr-10 flex items-baseline space-x-1">
+        <nav className="bg-white sticky top-0 z-50">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="flex h-16 items-center justify-end">
+                    <div className="flex items-center">
+                        <div className="hidden md:block">
+                            <div className="mr-10 flex items-baseline space-x-1">
                                 {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
                                 {/* <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a> */}
-                                <a href="" class="text-gray hover:text-cyan-600 rounded-md px-3 py-2 text-xl">
+                                <button className="text-gray hover:text-cyan-600 rounded-md px-3 py-2 text-xl">
                                     <Link
                                         activeClass="text-cyan-600"
                                         to="home"
                                         spy={true}
                                         smooth={true}
+                                        offset={-100}
                                         duration={500}
                                     >
                                         Home
                                     </Link>
-                                </a>
-                                <a href="" class="text-gray hover:text-cyan-600 rounded-md px-3 py-2 text-xl">
+                                </button>
+                                <button className="text-gray hover:text-cyan-600 rounded-md px-3 py-2 text-xl">
                                     <Link
                                         activeClass="text-cyan-600"
                                         to="about"
                                         spy={true}
                                         smooth={true}
+                                        offset={10}
                                         duration={500}
                                     >
                                         About
                                     </Link>
-                                </a>
+                                </button>
                                 {/* <a href="" class="text-gray hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-xl">
                                     <Link
                                         activeClass="text-cyan-600"
@@ -64,28 +66,30 @@ class Navbar extends React.Component {
                                         Skills
                                     </Link>
                                 </a> */}
-                                <a href="" class="text-gray hover:text-cyan-600 rounded-md px-3 py-2 text-xl">
+                                <button className="text-gray hover:text-cyan-600 rounded-md px-3 py-2 text-xl">
                                     <Link
                                         activeClass="text-cyan-600"
                                         to="projects"
                                         spy={true}
                                         smooth={true}
+                                        offset={10}
                                         duration={500}
                                     >
                                         Projects
                                     </Link>
-                                </a>
-                                <a href="" class="text-gray hover:text-cyan-600 rounded-md px-3 py-2 text-xl">
+                                </button>
+                                <button className="text-gray hover:text-cyan-600 rounded-md px-3 py-2 text-xl">
                                     <Link
                                         activeClass="text-cyan-600"
                                         to="contact"
                                         spy={true}
                                         smooth={true}
+                                        offset={10}
                                         duration={500}
                                     >
                                         Contact
                                     </Link>
-                                </a>
+                                </button>
                             </div>
                         </div>
                         {/* <div class="flex-shrink-0">
