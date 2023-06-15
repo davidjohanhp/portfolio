@@ -18,15 +18,30 @@ import rumahsehatmob_makeappointment from "../img/projects/rumahsehat-mobile/mak
 import rumahsehatmob_appointmentsuccess from "../img/projects/rumahsehat-mobile/appointmentsuccess.png";
 import rumahsehatmob_detailappointment from "../img/projects/rumahsehat-mobile/detailappointment.png";
 
-import login from "../img/projects/plabs/login.png"
-import dashboard_admin from "../img/projects/plabs/dashboard_admin.png"
-import dashboard_admin_2 from "../img/projects/plabs/dashboard_admin_2.png"
-import dashboard_staff from "../img/projects/plabs/dashboard_staff.png"
-import ac_staff from "../img/projects/plabs/ac_staff.png"
-import attendance_admin from "../img/projects/plabs/attendance_admin.png"
-import attendance_admin_2 from "../img/projects/plabs/attendance_admin_2.png"
-import employee_admin from "../img/projects/plabs/employee_admin.png"
-import leave_admin from "../img/projects/plabs/leave_admin.png"
+import plabs_login from "../img/projects/plabs/login.png"
+import plabs_dashboard_admin from "../img/projects/plabs/dashboard_admin.png"
+import plabs_dashboard_admin_2 from "../img/projects/plabs/dashboard_admin_2.png"
+import plabs_dashboard_staff from "../img/projects/plabs/dashboard_staff.png"
+import plabs_ac_staff from "../img/projects/plabs/ac_staff.png"
+import plabs_attendance_admin from "../img/projects/plabs/attendance_admin.png"
+import plabs_attendance_admin_2 from "../img/projects/plabs/attendance_admin_2.png"
+import plabs_employee_admin from "../img/projects/plabs/employee_admin.png"
+import plabs_leave_admin from "../img/projects/plabs/leave_admin.png"
+
+import evomo_login from "../img/projects/evomo/login.jpg"
+import evomo_google from "../img/projects/evomo/google.jpg"
+import evomo_home from "../img/projects/evomo/home.jpg"
+import evomo_home_2 from "../img/projects/evomo/home_2.jpg"
+import evomo_home_3 from "../img/projects/evomo/home_3.jpg"
+import evomo_camera from "../img/projects/evomo/camera.jpg"
+import evomo_camera_2 from "../img/projects/evomo/camera_2.jpg"
+import evomo_camera_3 from "../img/projects/evomo/camera_3.jpg"
+import evomo_camera_4 from "../img/projects/evomo/camera_4.jpg"
+import evomo_camera_5 from "../img/projects/evomo/camera_5.jpg"
+import evomo_camera_6 from "../img/projects/evomo/camera_6.jpg"
+import evomo_history from "../img/projects/evomo/history.jpg"
+import evomo_profile from "../img/projects/evomo/profile.jpg"
+import evomo_logout from "../img/projects/evomo/logout.jpg"
 
 import { FaBeer, FaGithub } from 'react-icons/fa';
 
@@ -49,24 +64,50 @@ class Projects extends React.Component {
         this.state = {
           projects: [
             {
-                id: "Emplova - HR Management System",
+                id: "BeltTrackr - Evomo Manufacture Product Counter Application",
+                desc: "An application for Evomo that provides feature to count the quantity of products in, out, and rejects on a conveyor belt for manufacturing purposes. \
+                The main purpose is to solve the need for manufacturing companies to have highly customizable and scalable systems and sensors for object detection.",
+                repo: "https://github.com/C23-CT02",
+                images: [
+                    evomo_login,
+                    evomo_google,
+                    evomo_home,
+                    evomo_home_2,
+                    evomo_home_3,
+                    evomo_camera,
+                    evomo_camera_2,
+                    evomo_camera_3,
+                    evomo_camera_4,
+                    evomo_camera_5,
+                    evomo_camera_6,
+                    evomo_history,
+                    evomo_profile,
+                    evomo_logout
+                ],
+                stacks: [
+                    <FaBeer size={20}/>
+                ],
+                settings: this.settingsMobile
+            },
+            {
+                id: "Emplova - PLABS.ID HR Management System",
                 desc: "An application for PLABS.id that provides features such as attendance management, location based absent, \
                 payroll management, salary slip document generator, activity reports, and more.\
                 Responsible as Lead Programmer on managing and controlling 4 teammates on development process.",
                 repo: "",
                 images: [
-                    login,
-                    dashboard_admin,
-                    dashboard_admin_2,
-                    dashboard_staff,
-                    ac_staff,
-                    attendance_admin,
-                    attendance_admin_2,
-                    employee_admin,
-                    leave_admin
+                    plabs_login,
+                    plabs_dashboard_admin,
+                    plabs_dashboard_admin_2,
+                    plabs_dashboard_staff,
+                    plabs_ac_staff,
+                    plabs_attendance_admin,
+                    plabs_attendance_admin_2,
+                    plabs_employee_admin,
+                    plabs_leave_admin
                 ],
                 stacks: [
-                    <FaBeer size={25}/>
+                    <FaBeer size={20}/>
                 ],
                 settings: this.settings
             },
@@ -113,6 +154,8 @@ class Projects extends React.Component {
     settings = {
         dots: false,
         infinite: true,
+        autoplay: true,
+        autoplaySpeed: 4000, 
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -123,6 +166,8 @@ class Projects extends React.Component {
     settingsMobile = {
         dots: false,
         infinite: true,
+        autoplay: true,
+        autoplaySpeed: 4000, 
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -139,7 +184,7 @@ class Projects extends React.Component {
                     {this.state.projects.map(content => {
                             return (
                                 <>
-                                <div className="">
+                                <div className="" key={content.id}>
                                     <Slider {...content.settings}>
                                         {content.images.map(image => {
                                             return (
@@ -153,15 +198,16 @@ class Projects extends React.Component {
                                 <div className="flex flex-col">
                                     <div className="flex-grow">
                                         <div className="flex items-center">
-                                            <h2 className="text-start font-semibold text-gray-900 sm:text-xl pr-2">{content.id}</h2>
-                                            <a href={content.repo} title="Github" target="_blank" className={content.repo == "" ? 'hidden' : ''}>
-                                                <FaGithub size={20} /> 
-                                            </a>
+                                            <h2 className="text-start font-semibold text-gray-900 sm:text-md pr-2">{content.id}
+                                                <a href={content.repo} title="Github" target="_blank" className={content.repo == "" ? 'hidden' : ''}>
+                                                    <FaGithub className="inline-block ml-1 mb-1" size={20} /> 
+                                                </a>
+                                            </h2>
                                         </div>
-                                        <p>{content.desc}</p>
+                                        <p className="text-sm">{content.desc}</p>
                                     </div>
                                     <div className="mt-auto">
-                                        <h2 className="font-semibold text-gray-900 sm:text-lg">Technology</h2>
+                                        <h2 className="font-semibold text-gray-900 sm:text-sm">Technology</h2>
                                         <div className="flex pb-1">
                                             {content.stacks.map(icons => {
                                                 return (
