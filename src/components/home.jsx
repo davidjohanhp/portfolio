@@ -1,5 +1,5 @@
 import React from "react";
-import myPhoto from "../img/intro-photo.jpeg"
+import myPhoto from "../img/new-photo.jpg"
 import { TypeAnimation } from "react-type-animation";
 
 class Home extends React.Component {

@@ -1,7 +1,6 @@
 import React from "react";
 import { Element } from "react-scroll";
 import Slider from "react-slick";
-import './about.css';
 
 import html from "../img/tech-icons/html-logo.png";
 import css from "../img/tech-icons/css-logo.png";
@@ -92,8 +91,8 @@ class About extends React.Component {
                                 <Slider {...this.settings}>
                                     {this.state.images.map(image => {
                                         return (
-                                            <div className="slick-slide">
-                                                <div className="skills">
+                                            <div className="flex">
+                                                <div className="grid place-items-center mx-auto w-4/5 h-[135px] p-0">
                                                     <img src={image} className="max-h-32 object-fit"/>
                                                 </div>
                                             </div>

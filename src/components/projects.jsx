@@ -43,6 +43,19 @@ import evomo_history from "../img/projects/evomo/history.jpg"
 import evomo_profile from "../img/projects/evomo/profile.jpg"
 import evomo_logout from "../img/projects/evomo/logout.jpg"
 
+import android_icon from "../img/small-tech-icons/android.png"
+import bootstrap_icon from "../img/small-tech-icons/bootstrap5.png"
+import django_icon from "../img/small-tech-icons/django.png"
+import firebase_icon from "../img/small-tech-icons/firebase.png"
+import fluttter_icon from "../img/small-tech-icons/flutter.png"
+import go_icon from "../img/small-tech-icons/go.png"
+import kotlin_icon from "../img/small-tech-icons/kotlin.png"
+import mysql_icon from "../img/small-tech-icons/mysql.png"
+import postgresql_icon from "../img/small-tech-icons/postfresql.png"
+import react_icon from "../img/small-tech-icons/reactjs.png"
+import spring_icon from "../img/small-tech-icons/spring.png"
+import tailwind_icon from "../img/small-tech-icons/tailwind.png"
+
 import { FaBeer, FaGithub } from 'react-icons/fa';
 
 const CustomArrow = (props) => {
@@ -85,7 +98,9 @@ class Projects extends React.Component {
                     evomo_logout
                 ],
                 stacks: [
-                    <FaBeer size={20}/>
+                    android_icon,
+                    firebase_icon,
+                    kotlin_icon
                 ],
                 settings: this.settingsMobile
             },
@@ -107,7 +122,10 @@ class Projects extends React.Component {
                     plabs_leave_admin
                 ],
                 stacks: [
-                    <FaBeer size={20}/>
+                    react_icon,
+                    tailwind_icon,
+                    go_icon,
+                    postgresql_icon
                 ],
                 settings: this.settings
             },
@@ -127,7 +145,9 @@ class Projects extends React.Component {
                     rumahsehatmob_detailappointment
                 ],
                 stacks: [
-                    <FaBeer size={25}/>
+                    fluttter_icon,
+                    spring_icon,
+                    mysql_icon
                 ],
                 settings: this.settingsMobile
             },
@@ -142,8 +162,9 @@ class Projects extends React.Component {
                     rumahsehatweb_chart
                 ],
                 stacks: [
-                    <FaBeer size={25}/>,
-                    <FaBeer size={25}/>
+                    bootstrap_icon,
+                    spring_icon,
+                    mysql_icon
                 ],
                 settings: this.settings
             },
@@ -212,7 +233,8 @@ class Projects extends React.Component {
                                             {content.stacks.map(icons => {
                                                 return (
                                                     <div>
-                                                        {icons}
+                                                        {/* {icons} */}
+                                                        <img src={icons} className="max-h-10 max-w-10"/>
                                                     </div>
                                                 );
                                             })}
