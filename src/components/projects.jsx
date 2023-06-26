@@ -228,7 +228,7 @@ class Projects extends React.Component {
                                         <p className="text-sm">{content.desc}</p>
                                     </div>
                                     <div className="mt-auto">
-                                        <h2 className="font-semibold text-gray-900 sm:text-sm">Technology</h2>
+                                        <h2 className="font-semibold text-gray-900 sm:text-sm">Tech Stacks</h2>
                                         <div className="flex pb-1">
                                             {content.stacks.map(icons => {
                                                 return (
