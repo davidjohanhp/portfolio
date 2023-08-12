@@ -244,33 +244,6 @@ class Projects extends React.Component {
                                 </>
                             );
                         })}
-                    {/* <div className="w-96">
-                        <Slider {...this.settings}>
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="Carousel Image 1" />
-                            </div>
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="Carousel Image 2" />
-                            </div>
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="Carousel Image 3" />
-                            </div>
-                        </Slider>
-                    </div>
-                    <p>aaa</p>
-                    <div className="w-96">
-                        <Slider {...this.settings}>
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="Carousel Image 1" />
-                            </div>
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="Carousel Image 2" />
-                            </div>
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="Carousel Image 3" />
-                            </div>
-                        </Slider>
-                    </div> */}
                 </div>
             </div>
         </div>
