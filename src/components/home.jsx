@@ -43,7 +43,7 @@ class Home extends React.Component {
                         <a className="px-3" href="https://www.instagram.com/davidjohanhp/" target="_blank" title="Instagram">
                             <FaInstagram className="lg:text-2xl text-xl"/>
                         </a>
-                        <a className="px-3" href="https://drive.google.com/file/d/1JayfARn-j9qJMeE81UoGAM5mD8tLMTaV/view?usp=sharing" target="_blank" title="Github">
+                        <a className="px-3" href="https://drive.google.com/file/d/1JayfARn-j9qJMeE81UoGAM5mD8tLMTaV/view?usp=sharing" target="_blank" title="CV">
                             <FaRegFilePdf className="lg:text-2xl text-xl"/> 
                         </a>
                     </div>
