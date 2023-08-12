@@ -3,7 +3,7 @@ import React from "react";
 class Contact extends React.Component {
     render() {
       return (
-        <div id="contact" className="flex h-screen justify-center items-center">
+        <div id="contact" className="sm:flex h-screen justify-center items-center hidden">
             <div className="mx-auto w-3/5">
                 <h1 className="text-center font-semibold text-gray-900 sm:text-7xl">Contact</h1>
                 <p className="text-center mt-2 text-lg text-gray-600">

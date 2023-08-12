@@ -198,14 +198,14 @@ class Projects extends React.Component {
 
     render() {
       return (
-        <div id="projects" className="flex h-fit justify-center items-center py-36">
-            <div className="mx-auto w-3/5">
-                <h1 className="text-center font-semibold text-gray-900 sm:text-7xl">Projects</h1>
-                <div className="grid grid-cols-2 gap-4 pt-10">
+        <div id="projects" className="flex sm:h-fit justify-center items-center sm:py-36 pt-36 pb-16">
+            <div className="sm:mx-auto sm:w-3/5 mx-10">
+                <h1 className="text-center font-semibold text-gray-900 sm:text-7xl text-3xl">Projects</h1>
+                <div className="grid sm:grid-cols-2 grid-cols-1 gap-4 sm:pt-10 pt-5">
                     {this.state.projects.map(content => {
                             return (
                                 <>
-                                <div className="" key={content.id}>
+                                <div className="sm:mt-0 mt-10" key={content.id}>
                                     <Slider {...content.settings}>
                                         {content.images.map(image => {
                                             return (
@@ -227,7 +227,7 @@ class Projects extends React.Component {
                                         </div>
                                         <p className="text-sm">{content.desc}</p>
                                     </div>
-                                    <div className="mt-auto">
+                                    <div className="sm:mt-auto mt-5">
                                         <h2 className="font-semibold text-gray-900 sm:text-sm">Tech Stacks</h2>
                                         <div className="flex pb-1">
                                             {content.stacks.map(icons => {
