@@ -19,6 +19,15 @@ import tailwind_icon from "../img/small-tech-icons/tailwind.png"
 
 import { FaBeer, FaGithub } from 'react-icons/fa';
 import Modal from "./projectModal";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+// import required modules
+import { Pagination, Navigation } from 'swiper/modules';
 
 const CustomArrow = (props) => {
     const { className, style, onClick } = props;
@@ -200,7 +209,27 @@ function Projects() {
                                 <>
                                     <div onClick={() => onClick(content)} key={content.id}>
                                         <div className="sm:mt-0 mt-5">
-                                            <Slider {...content.settings}>
+                                        <Swiper
+                                            slidesPerView={1}
+                                            spaceBetween={5}
+                                            loop={true}
+                                            pagination={{
+                                            clickable: true,
+                                            }}
+                                            modules={[Pagination, Navigation]}
+                                            className=""
+                                        >
+                                            {content.images.map((image, index) => (
+                                            <SwiperSlide key={index}>
+                                                <img
+                                                src={image}
+                                                className="sm:h-64 h-50 max-w-80 w-full object-contain"
+                                                alt={`Image ${index}`}
+                                                />
+                                            </SwiperSlide>
+                                            ))}
+                                        </Swiper>
+                                            {/* <Slider {...content.settings}>
                                                 {content.images.map(image => {
                                                     return (
                                                         <div>
@@ -208,7 +237,7 @@ function Projects() {
                                                         </div>
                                                     );
                                                 })}
-                                            </Slider>
+                                            </Slider> */}
                                             <div className="">
                                                 <h2 className="text-start font-semibold text-gray-900 sm:text-md pr-2">{content.id}
                                                 </h2>

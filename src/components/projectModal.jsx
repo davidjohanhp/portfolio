@@ -3,6 +3,18 @@ import { Fragment, useState } from 'react'
 import { FaGithub } from 'react-icons/fa';
 import Slider from 'react-slick';
 
+import React, { useRef } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+// import required modules
+import { Pagination, Navigation } from 'swiper/modules';
+
 export default function Modal({open, onClose, project}) {
     return (
         <>
@@ -59,25 +71,35 @@ export default function Modal({open, onClose, project}) {
                                         </div>
                                     </div>
                                 </div>
-                                <Slider {...project.settingsModal} className="sm:max-w-sm max-w-[250px] mx-auto">
+                                <Swiper
+                                    slidesPerView={1}
+                                    spaceBetween={5}
+                                    loop={true}
+                                    pagination={{
+                                    clickable: true,
+                                    }}
+                                    modules={[Pagination, Navigation]}
+                                    className="w-full h-full"
+                                >
+                                    {project.images.map((image, index) => (
+                                    <SwiperSlide key={index}>
+                                        <img
+                                        src={image}
+                                        className="sm:h-64 h-50 max-w-80 w-full object-contain"
+                                        alt={`Image ${index}`}
+                                        />
+                                    </SwiperSlide>
+                                    ))}
+                                </Swiper>
+                                {/* <Slider {...project.settingsModal} className="sm:max-w-sm max-w-[250px] mx-auto">
                                     {project.images.map((image, index) => (
                                         <div key={index} className='w-fit'>
                                             {console.log(image)}
                                             <img src={image} className="sm:h-64 h-50 w-fit object-contain" alt={`Image ${index}`} />
                                         </div>
                                     ))}
-                                </Slider>
+                                </Slider> */}
                             </div>
-
-                            {/* <div className="mt-4">
-                                <button
-                                type="button"
-                                className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                                onClick={onClose}
-                                >
-                                Got it, thanks!
-                                </button>
-                            </div> */}
                             </Dialog.Panel>
                         </Transition.Child>
                     </div>
