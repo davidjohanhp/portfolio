@@ -34,16 +34,16 @@ class Home extends React.Component {
                         </span>
                     </div>
                     <div className="flex align-center pt-5">
-                        <a className="pr-3" href="https://github.com/davidjohanhp" target="_blank" title="Github">
+                        <a className="hover:text-gray-600 pr-3" href="https://github.com/davidjohanhp" target="_blank" title="Github">
                             <FaGithub className="lg:text-2xl text-xl"/> 
                         </a>
-                        <a className="px-3" href="https://www.linkedin.com/in/davidjh-parhusip/" target="_blank" title="LinkedIn">
+                        <a className="hover:text-gray-600 px-3" href="https://www.linkedin.com/in/davidjh-parhusip/" target="_blank" title="LinkedIn">
                             <FaLinkedin className="lg:text-2xl text-xl"/> 
                         </a>
-                        <a className="px-3" href="https://www.instagram.com/davidjohanhp/" target="_blank" title="Instagram">
+                        <a className="hover:text-gray-600 px-3" href="https://www.instagram.com/davidjohanhp/" target="_blank" title="Instagram">
                             <FaInstagram className="lg:text-2xl text-xl"/>
                         </a>
-                        <a className="px-3" href="https://drive.google.com/file/d/1qgclhUeF2NeUw2DEmD2XgXcDVrdDDbwI/view?usp=sharing" target="_blank" title="CV">
+                        <a className="hover:text-gray-600 px-3" href="https://drive.google.com/file/d/1qgclhUeF2NeUw2DEmD2XgXcDVrdDDbwI/view?usp=sharing" target="_blank" title="CV">
                             <FaRegFilePdf className="lg:text-2xl text-xl"/> 
                         </a>
                     </div>

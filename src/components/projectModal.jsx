@@ -1,5 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
+import { FaGithub } from 'react-icons/fa';
 import Slider from 'react-slick';
 
 export default function Modal({open, onClose, project}) {
@@ -33,10 +34,13 @@ export default function Modal({open, onClose, project}) {
                         >
                             <Dialog.Panel className="w-full max-w-3xl transform overflow-hidden rounded-2xl bg-white p-10 text-left align-middle shadow-xl transition-all">
                             <Dialog.Title
-                                as="h3"
-                                className="text-lg font-medium leading-6 text-gray-900"
+                                as="h2"
+                                className="text-start font-semibold text-gray-900 sm:text-md pr-2"
                             >
                                 {project.id}
+                                <a href={project.repo} title="Github" target="_blank" className={project.repo === "" ? 'hidden' : ''}>
+                                    <FaGithub className="inline-block ml-1 mb-1" size={20} />
+                                </a>
                             </Dialog.Title>
                             <div className="flex flex-col sm:gap-1 gap-5">
                                 <div className="mt-2">
@@ -55,7 +59,7 @@ export default function Modal({open, onClose, project}) {
                                         </div>
                                     </div>
                                 </div>
-                                <Slider {...project.settings} className="sm:max-w-sm max-w-[250px] mx-auto">
+                                <Slider {...project.settingsModal} className="sm:max-w-sm max-w-[250px] mx-auto">
                                     {project.images.map((image, index) => (
                                         <div key={index} className='w-fit'>
                                             <img src={image} className="sm:h-64 h-50 w-fit object-contain" alt={`Image ${index}`} />

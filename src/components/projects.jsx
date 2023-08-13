@@ -1,47 +1,8 @@
 import React, { useState } from "react";
-import myPhoto from "../img/intro-photo.jpeg"
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-
-import rumahsehatweb_login from "../img/projects/rumahsehat-web/rumahsehatweb-login.png";
-import rumahsehatweb_home from "../img/projects/rumahsehat-web/rumahsehatweb-home.png";
-import rumahsehatweb_chart from "../img/projects/rumahsehat-web/rumahsehatweb-chart.png";
-
-import rumahsehatmob_login from "../img/projects/rumahsehat-mobile/login.png";
-import rumahsehatmob_logout from "../img/projects/rumahsehat-mobile/logout.png";
-import rumahsehatmob_home from "../img/projects/rumahsehat-mobile/home.png";
-import rumahsehatmob_profile from "../img/projects/rumahsehat-mobile/profile.png";
-import rumahsehatmob_topup from "../img/projects/rumahsehat-mobile/topup.png";
-import rumahsehatmob_makeappointment from "../img/projects/rumahsehat-mobile/makeappointment.png";
-import rumahsehatmob_appointmentsuccess from "../img/projects/rumahsehat-mobile/appointmentsuccess.png";
-import rumahsehatmob_detailappointment from "../img/projects/rumahsehat-mobile/detailappointment.png";
-
-import plabs_login from "../img/projects/plabs/login.png"
-import plabs_dashboard_admin from "../img/projects/plabs/dashboard_admin.png"
-import plabs_dashboard_admin_2 from "../img/projects/plabs/dashboard_admin_2.png"
-import plabs_dashboard_staff from "../img/projects/plabs/dashboard_staff.png"
-import plabs_ac_staff from "../img/projects/plabs/ac_staff.png"
-import plabs_attendance_admin from "../img/projects/plabs/attendance_admin.png"
-import plabs_attendance_admin_2 from "../img/projects/plabs/attendance_admin_2.png"
-import plabs_employee_admin from "../img/projects/plabs/employee_admin.png"
-import plabs_leave_admin from "../img/projects/plabs/leave_admin.png"
-
-import evomo_login from "../img/projects/evomo/login.jpg"
-import evomo_google from "../img/projects/evomo/google.jpg"
-import evomo_home from "../img/projects/evomo/home.jpg"
-import evomo_home_2 from "../img/projects/evomo/home_2.jpg"
-import evomo_home_3 from "../img/projects/evomo/home_3.jpg"
-import evomo_camera from "../img/projects/evomo/camera.jpg"
-import evomo_camera_2 from "../img/projects/evomo/camera_2.jpg"
-import evomo_camera_3 from "../img/projects/evomo/camera_3.jpg"
-import evomo_camera_4 from "../img/projects/evomo/camera_4.jpg"
-import evomo_camera_5 from "../img/projects/evomo/camera_5.jpg"
-import evomo_camera_6 from "../img/projects/evomo/camera_6.jpg"
-import evomo_history from "../img/projects/evomo/history.jpg"
-import evomo_profile from "../img/projects/evomo/profile.jpg"
-import evomo_logout from "../img/projects/evomo/logout.jpg"
 
 import android_icon from "../img/small-tech-icons/android.png"
 import bootstrap_icon from "../img/small-tech-icons/bootstrap5.png"
@@ -76,7 +37,7 @@ function Projects() {
     const settings = {
         dots: false,
         infinite: true,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 4000, 
         speed: 500,
         slidesToShow: 1,
@@ -86,6 +47,30 @@ function Projects() {
     };
 
     const settingsMobile = {
+        dots: false,
+        infinite: true,
+        autoplay: false,
+        autoplaySpeed: 4000, 
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        prevArrow: <CustomArrow />,
+        nextArrow: <CustomArrow />
+    };
+
+    const settingsModal = {
+        dots: false,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 4000, 
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: <CustomArrow />,
+        nextArrow: <CustomArrow />
+    };
+
+    const settingsMobileModal = {
         dots: false,
         infinite: true,
         autoplay: true,
@@ -104,27 +89,28 @@ function Projects() {
             The main purpose is to solve the need for manufacturing companies to have highly customizable and scalable systems and sensors for object detection.",
             repo: "https://github.com/C23-CT02",
             images: [
-                evomo_login,
-                evomo_google,
-                evomo_home,
-                evomo_home_2,
-                evomo_home_3,
-                evomo_camera,
-                evomo_camera_2,
-                evomo_camera_3,
-                evomo_camera_4,
-                evomo_camera_5,
-                evomo_camera_6,
-                evomo_history,
-                evomo_profile,
-                evomo_logout
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/login.jpg",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/google.jpg",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/home.jpg",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/home_2.jpg",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/home_3.jpg",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/camera.jpg",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/camera_2.jpg",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/camera_3.jpg",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/camera_4.jpg",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/camera_5.jpg",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/camera_6.jpg",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/history.jpg",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/profile.jpg",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/logout.jpg"
             ],
             stacks: [
                 android_icon,
                 firebase_icon,
                 kotlin_icon
             ],
-            settings: settingsMobile
+            settings: settingsMobile,
+            settingsModal: settingsMobileModal
         },
         {
             id: "Emplova - PLABS.ID HR Management System",
@@ -133,15 +119,15 @@ function Projects() {
             Responsible as Lead Programmer on managing and controlling 4 teammates on development process.",
             repo: "",
             images: [
-                plabs_login,
-                plabs_dashboard_admin,
-                plabs_dashboard_admin_2,
-                plabs_dashboard_staff,
-                plabs_ac_staff,
-                plabs_attendance_admin,
-                plabs_attendance_admin_2,
-                plabs_employee_admin,
-                plabs_leave_admin
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/plabs/login.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/plabs/dashboard_admin.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/plabs/dashboard_admin_2.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/plabs/dashboard_staff.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/plabs/ac_staff.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/plabs/attendance_admin.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/plabs/attendance_admin_2.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/plabs/employee_admin.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/plabs/leave_admin.png",
             ],
             stacks: [
                 react_icon,
@@ -149,7 +135,8 @@ function Projects() {
                 go_icon,
                 postgresql_icon
             ],
-            settings: settings
+            settings: settings,
+            settingsModal: settingsModal
         },
         {
             id: "RumahSehat Mobile",
@@ -157,21 +144,22 @@ function Projects() {
             viewing bills, viewing recipes, and viewing upcoming appointments.",
             repo: "https://gitlab.cs.ui.ac.id/david.johan/ta_a_ori_55/-/tree/main/rumahSehat_mobile",
             images: [
-                rumahsehatmob_login,
-                rumahsehatmob_logout,
-                rumahsehatmob_home,
-                rumahsehatmob_profile,
-                rumahsehatmob_topup,
-                rumahsehatmob_makeappointment,
-                rumahsehatmob_appointmentsuccess,
-                rumahsehatmob_detailappointment
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/login.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/home.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/profile.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/topup.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/makeappointment.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/appointmentsuccess.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/detailappointment.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/logout.png",
             ],
             stacks: [
                 fluttter_icon,
                 spring_icon,
                 mysql_icon
             ],
-            settings: settingsMobile
+            settings: settingsMobile,
+            settingsModal: settingsMobileModal
         },
         {
             id: "RumahSehat Website",
@@ -179,16 +167,17 @@ function Projects() {
             viewing bills, viewing recipes, and viewing upcoming appointments.",
             repo: "https://gitlab.cs.ui.ac.id/david.johan/ta_a_ori_55/-/tree/main/rumahSehat",
             images: [
-                rumahsehatweb_login,
-                rumahsehatweb_home,
-                rumahsehatweb_chart
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-web/rumahsehatweb-login.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-web/rumahsehatweb-home.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-web/rumahsehatweb-chart.png"
             ],
             stacks: [
                 bootstrap_icon,
                 spring_icon,
                 mysql_icon
             ],
-            settings: settings
+            settings: settings,
+            settingsModal: settingsModal
         },
         ];
 
@@ -201,7 +190,7 @@ function Projects() {
     }
 
     return (
-        <div id="projects" className="flex sm:h-fit justify-center items-center sm:py-36 pt-36 pb-16">
+        <div id="projects" className="flex sm:h-fit justify-center items-center sm:pt-24 pt-36 pb-16">
             <div className="sm:mx-auto sm:w-4/5 mx-10">
                 <h1 className="text-center font-semibold text-gray-900 sm:text-7xl text-3xl">Projects</h1>
                 <Modal open={open} onClose={() => setOpen(false)} project={project}/>
@@ -222,9 +211,6 @@ function Projects() {
                                             </Slider>
                                             <div className="">
                                                 <h2 className="text-start font-semibold text-gray-900 sm:text-md pr-2">{content.id}
-                                                    <a href={content.repo} title="Github" target="_blank" className={content.repo === "" ? 'hidden' : ''}>
-                                                    <FaGithub className="inline-block ml-1 mb-1" size={20} />
-                                                    </a>
                                                 </h2>
                                             </div>
                                         </div>
@@ -233,49 +219,6 @@ function Projects() {
                             );
                         })}
                 </div>
-                {/* <div className="grid sm:grid-cols-2 grid-cols-1 gap-4 sm:pt-10 pt-5">
-                    {projects.map(content => {
-                            return (
-                                <>
-                                <div className="sm:mt-0 mt-10" key={content.id}>
-                                    <Slider {...content.settings}>
-                                        {content.images.map(image => {
-                                            return (
-                                                <div>
-                                                    <img src={image} className="max-h-64 max-w-80 h-full w-full object-contain"/>
-                                                </div>
-                                            );
-                                        })}
-                                    </Slider>
-                                </div>
-                                <div className="flex flex-col">
-                                    <div className="flex-grow">
-                                        <div className="flex items-center">
-                                            <h2 className="text-start font-semibold text-gray-900 sm:text-md pr-2">{content.id}
-                                                <a href={content.repo} title="Github" target="_blank" className={content.repo == "" ? 'hidden' : ''}>
-                                                    <FaGithub className="inline-block ml-1 mb-1" size={20} /> 
-                                                </a>
-                                            </h2>
-                                        </div>
-                                        <p className="text-sm">{content.desc}</p>
-                                    </div>
-                                    <div className="sm:mt-auto mt-5">
-                                        <h2 className="font-semibold text-gray-900 sm:text-sm">Tech Stacks</h2>
-                                        <div className="flex pb-1">
-                                            {content.stacks.map(icons => {
-                                                return (
-                                                    <div>
-                                                        <img src={icons} className="max-h-10 max-w-10"/>
-                                                    </div>
-                                                );
-                                            })}
-                                        </div>
-                                    </div>
-                                </div>
-                                </>
-                            );
-                        })}
-                </div> */}
             </div>
         </div>
     );
