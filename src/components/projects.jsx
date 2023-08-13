@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import myPhoto from "../img/intro-photo.jpeg"
 
 import 'slick-carousel/slick/slick.css';
@@ -57,6 +57,7 @@ import spring_icon from "../img/small-tech-icons/spring.png"
 import tailwind_icon from "../img/small-tech-icons/tailwind.png"
 
 import { FaBeer, FaGithub } from 'react-icons/fa';
+import Modal from "./projectModal";
 
 const CustomArrow = (props) => {
     const { className, style, onClick } = props;
@@ -71,108 +72,8 @@ const CustomArrow = (props) => {
         );
 };
 
-class Projects extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-          projects: [
-            {
-                id: "BeltTrackr - Evomo Manufacture Product Counter Application",
-                desc: "An application for Evomo that provides feature to count the quantity of products in, out, and rejects on a conveyor belt for manufacturing purposes. \
-                The main purpose is to solve the need for manufacturing companies to have highly customizable and scalable systems and sensors for object detection.",
-                repo: "https://github.com/C23-CT02",
-                images: [
-                    evomo_login,
-                    evomo_google,
-                    evomo_home,
-                    evomo_home_2,
-                    evomo_home_3,
-                    evomo_camera,
-                    evomo_camera_2,
-                    evomo_camera_3,
-                    evomo_camera_4,
-                    evomo_camera_5,
-                    evomo_camera_6,
-                    evomo_history,
-                    evomo_profile,
-                    evomo_logout
-                ],
-                stacks: [
-                    android_icon,
-                    firebase_icon,
-                    kotlin_icon
-                ],
-                settings: this.settingsMobile
-            },
-            {
-                id: "Emplova - PLABS.ID HR Management System",
-                desc: "An application for PLABS.id that provides features such as attendance management, location based absent, \
-                payroll management, salary slip document generator, activity reports, and more.\
-                Responsible as Lead Programmer on managing and controlling 4 teammates on development process.",
-                repo: "",
-                images: [
-                    plabs_login,
-                    plabs_dashboard_admin,
-                    plabs_dashboard_admin_2,
-                    plabs_dashboard_staff,
-                    plabs_ac_staff,
-                    plabs_attendance_admin,
-                    plabs_attendance_admin_2,
-                    plabs_employee_admin,
-                    plabs_leave_admin
-                ],
-                stacks: [
-                    react_icon,
-                    tailwind_icon,
-                    go_icon,
-                    postgresql_icon
-                ],
-                settings: this.settings
-            },
-            {
-                id: "RumahSehat Mobile",
-                desc: "RumahSehat is a Flutter-based application that provides features for patients to support hospitals or clinics such as making an appointment, \
-                viewing bills, viewing recipes, and viewing upcoming appointments.",
-                repo: "https://gitlab.cs.ui.ac.id/david.johan/ta_a_ori_55/-/tree/main/rumahSehat_mobile",
-                images: [
-                    rumahsehatmob_login,
-                    rumahsehatmob_logout,
-                    rumahsehatmob_home,
-                    rumahsehatmob_profile,
-                    rumahsehatmob_topup,
-                    rumahsehatmob_makeappointment,
-                    rumahsehatmob_appointmentsuccess,
-                    rumahsehatmob_detailappointment
-                ],
-                stacks: [
-                    fluttter_icon,
-                    spring_icon,
-                    mysql_icon
-                ],
-                settings: this.settingsMobile
-            },
-            {
-                id: "RumahSehat Website",
-                desc: "RumahSehat is a website designated for hospital staffs that provides features to support hospitals or clinics such as maintaining appointments, \
-                viewing bills, viewing recipes, and viewing upcoming appointments.",
-                repo: "https://gitlab.cs.ui.ac.id/david.johan/ta_a_ori_55/-/tree/main/rumahSehat",
-                images: [
-                    rumahsehatweb_login,
-                    rumahsehatweb_home,
-                    rumahsehatweb_chart
-                ],
-                stacks: [
-                    bootstrap_icon,
-                    spring_icon,
-                    mysql_icon
-                ],
-                settings: this.settings
-            },
-          ]
-        };
-      }
-
-    settings = {
+function Projects() { 
+    const settings = {
         dots: false,
         infinite: true,
         autoplay: true,
@@ -184,7 +85,7 @@ class Projects extends React.Component {
         nextArrow: <CustomArrow />
     };
 
-    settingsMobile = {
+    const settingsMobile = {
         dots: false,
         infinite: true,
         autoplay: true,
@@ -196,13 +97,144 @@ class Projects extends React.Component {
         nextArrow: <CustomArrow />
     };
 
-    render() {
-      return (
+    const projects = [
+        {
+            id: "BeltTrackr - Evomo Manufacture Product Counter Application",
+            desc: "An application for Evomo that provides feature to count the quantity of products in, out, and rejects on a conveyor belt for manufacturing purposes. \
+            The main purpose is to solve the need for manufacturing companies to have highly customizable and scalable systems and sensors for object detection.",
+            repo: "https://github.com/C23-CT02",
+            images: [
+                evomo_login,
+                evomo_google,
+                evomo_home,
+                evomo_home_2,
+                evomo_home_3,
+                evomo_camera,
+                evomo_camera_2,
+                evomo_camera_3,
+                evomo_camera_4,
+                evomo_camera_5,
+                evomo_camera_6,
+                evomo_history,
+                evomo_profile,
+                evomo_logout
+            ],
+            stacks: [
+                android_icon,
+                firebase_icon,
+                kotlin_icon
+            ],
+            settings: settingsMobile
+        },
+        {
+            id: "Emplova - PLABS.ID HR Management System",
+            desc: "An application for PLABS.id that provides features such as attendance management, location based absent, \
+            payroll management, salary slip document generator, activity reports, and more.\
+            Responsible as Lead Programmer on managing and controlling 4 teammates on development process.",
+            repo: "",
+            images: [
+                plabs_login,
+                plabs_dashboard_admin,
+                plabs_dashboard_admin_2,
+                plabs_dashboard_staff,
+                plabs_ac_staff,
+                plabs_attendance_admin,
+                plabs_attendance_admin_2,
+                plabs_employee_admin,
+                plabs_leave_admin
+            ],
+            stacks: [
+                react_icon,
+                tailwind_icon,
+                go_icon,
+                postgresql_icon
+            ],
+            settings: settings
+        },
+        {
+            id: "RumahSehat Mobile",
+            desc: "RumahSehat is a Flutter-based application that provides features for patients to support hospitals or clinics such as making an appointment, \
+            viewing bills, viewing recipes, and viewing upcoming appointments.",
+            repo: "https://gitlab.cs.ui.ac.id/david.johan/ta_a_ori_55/-/tree/main/rumahSehat_mobile",
+            images: [
+                rumahsehatmob_login,
+                rumahsehatmob_logout,
+                rumahsehatmob_home,
+                rumahsehatmob_profile,
+                rumahsehatmob_topup,
+                rumahsehatmob_makeappointment,
+                rumahsehatmob_appointmentsuccess,
+                rumahsehatmob_detailappointment
+            ],
+            stacks: [
+                fluttter_icon,
+                spring_icon,
+                mysql_icon
+            ],
+            settings: settingsMobile
+        },
+        {
+            id: "RumahSehat Website",
+            desc: "RumahSehat is a website designated for hospital staffs that provides features to support hospitals or clinics such as maintaining appointments, \
+            viewing bills, viewing recipes, and viewing upcoming appointments.",
+            repo: "https://gitlab.cs.ui.ac.id/david.johan/ta_a_ori_55/-/tree/main/rumahSehat",
+            images: [
+                rumahsehatweb_login,
+                rumahsehatweb_home,
+                rumahsehatweb_chart
+            ],
+            stacks: [
+                bootstrap_icon,
+                spring_icon,
+                mysql_icon
+            ],
+            settings: settings
+        },
+        ];
+
+    const [open, setOpen] = useState(false);
+    const [project, setProject] = useState("");
+
+    function onClick(selected) {
+        setOpen(true)
+        setProject(selected)
+    }
+
+    return (
         <div id="projects" className="flex sm:h-fit justify-center items-center sm:py-36 pt-36 pb-16">
-            <div className="sm:mx-auto sm:w-3/5 mx-10">
+            <div className="sm:mx-auto sm:w-4/5 mx-10">
                 <h1 className="text-center font-semibold text-gray-900 sm:text-7xl text-3xl">Projects</h1>
-                <div className="grid sm:grid-cols-2 grid-cols-1 gap-4 sm:pt-10 pt-5">
-                    {this.state.projects.map(content => {
+                <Modal open={open} onClose={() => setOpen(false)} project={project}/>
+                <div className="grid sm:grid-cols-3 grid-cols-1 gap-4 sm:pt-10">
+                    {projects.map(content => {
+                            return (
+                                <>
+                                    <div onClick={() => onClick(content)} key={content.id}>
+                                        <div className="sm:mt-0 mt-5">
+                                            <Slider {...content.settings}>
+                                                {content.images.map(image => {
+                                                    return (
+                                                        <div>
+                                                            <img src={image} className="sm:h-64 h-50 max-w-80 w-full object-contain"/>
+                                                        </div>
+                                                    );
+                                                })}
+                                            </Slider>
+                                            <div className="">
+                                                <h2 className="text-start font-semibold text-gray-900 sm:text-md pr-2">{content.id}
+                                                    <a href={content.repo} title="Github" target="_blank" className={content.repo === "" ? 'hidden' : ''}>
+                                                    <FaGithub className="inline-block ml-1 mb-1" size={20} />
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </>
+                            );
+                        })}
+                </div>
+                {/* <div className="grid sm:grid-cols-2 grid-cols-1 gap-4 sm:pt-10 pt-5">
+                    {projects.map(content => {
                             return (
                                 <>
                                 <div className="sm:mt-0 mt-10" key={content.id}>
@@ -233,7 +265,6 @@ class Projects extends React.Component {
                                             {content.stacks.map(icons => {
                                                 return (
                                                     <div>
-                                                        {/* {icons} */}
                                                         <img src={icons} className="max-h-10 max-w-10"/>
                                                     </div>
                                                 );
@@ -244,11 +275,10 @@ class Projects extends React.Component {
                                 </>
                             );
                         })}
-                </div>
+                </div> */}
             </div>
         </div>
-      );
-    }
-  }
+    );
+}
   
-  export default Projects;
+export default Projects;
