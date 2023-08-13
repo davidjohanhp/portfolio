@@ -62,6 +62,7 @@ export default function Modal({open, onClose, project}) {
                                 <Slider {...project.settingsModal} className="sm:max-w-sm max-w-[250px] mx-auto">
                                     {project.images.map((image, index) => (
                                         <div key={index} className='w-fit'>
+                                            {console.log(image)}
                                             <img src={image} className="sm:h-64 h-50 w-fit object-contain" alt={`Image ${index}`} />
                                         </div>
                                     ))}
