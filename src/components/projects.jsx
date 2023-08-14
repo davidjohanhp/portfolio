@@ -117,7 +117,7 @@ function Projects() {
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/profile.jpg",
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/logout.jpg"
             ],
-            thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/thumbnail.jpg",
+            thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/thumbnail.png",
             stacks: [
                 android_icon,
                 firebase_icon,
