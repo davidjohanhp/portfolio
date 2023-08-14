@@ -7,7 +7,7 @@ class Home extends React.Component {
     render() {
       return (
         <div id="home" className="flex sm:h-[40rem] justify-center items-center">
-            <div className="px-10 sm:mt-0 mt-10">
+            <div className="px-10 sm:mt-0 mt-36">
                 <div className="content-center xs:mx-10">
                     <div className="mx-auto">
                         <h1 className="text-start font-semibold leading-15 text-gray-900 lg:text-8xl md:text-5xl text-3xl sm:leading-15">Hello, I am <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-500">David Johan</span></h1>
@@ -34,16 +34,16 @@ class Home extends React.Component {
                         </span>
                     </div>
                     <div className="flex align-center pt-5">
-                        <a className="pr-3" href="https://github.com/davidjohanhp" target="_blank" title="Github">
+                        <a className="hover:text-gray-600 pr-3" href="https://github.com/davidjohanhp" target="_blank" title="Github">
                             <FaGithub className="lg:text-2xl text-xl"/> 
                         </a>
-                        <a className="px-3" href="https://www.linkedin.com/in/davidjh-parhusip/" target="_blank" title="LinkedIn">
+                        <a className="hover:text-gray-600 px-3" href="https://www.linkedin.com/in/davidjh-parhusip/" target="_blank" title="LinkedIn">
                             <FaLinkedin className="lg:text-2xl text-xl"/> 
                         </a>
-                        <a className="px-3" href="https://www.instagram.com/davidjohanhp/" target="_blank" title="Instagram">
+                        <a className="hover:text-gray-600 px-3" href="https://www.instagram.com/davidjohanhp/" target="_blank" title="Instagram">
                             <FaInstagram className="lg:text-2xl text-xl"/>
                         </a>
-                        <a className="px-3" href="https://drive.google.com/file/d/1JayfARn-j9qJMeE81UoGAM5mD8tLMTaV/view?usp=sharing" target="_blank" title="CV">
+                        <a className="hover:text-gray-600 px-3" href="https://drive.google.com/file/d/1qgclhUeF2NeUw2DEmD2XgXcDVrdDDbwI/view?usp=sharing" target="_blank" title="CV">
                             <FaRegFilePdf className="lg:text-2xl text-xl"/> 
                         </a>
                     </div>
