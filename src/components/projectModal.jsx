@@ -50,7 +50,7 @@ export default function Modal({open, onClose, project}) {
                                 className="text-start font-semibold text-gray-900 sm:text-md pr-2"
                             >
                                 {project.id}
-                                <a href={project.repo} title="Github" target="_blank" className={project.repo === "" ? 'hidden' : ''}>
+                                <a href={project.repo} title="Github" target="_blank" className={`focus:outline-none ${project.repo === "" ? 'hidden' : ''}`}>
                                     <FaGithub className="inline-block ml-1 mb-1" size={20} />
                                 </a>
                             </Dialog.Title>
