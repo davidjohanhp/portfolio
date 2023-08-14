@@ -79,26 +79,18 @@ export default function Modal({open, onClose, project}) {
                                     clickable: true,
                                     }}
                                     modules={[Pagination, Navigation]}
-                                    className="w-full h-full"
+                                    className="w-full sm:h-full"
                                 >
                                     {project.images.map((image, index) => (
                                     <SwiperSlide key={index}>
                                         <img
                                         src={image}
-                                        className="sm:h-64 h-50 max-w-80 w-full object-contain"
+                                        className="h-64 max-w-80 w-full object-contain"
                                         alt={`Image ${index}`}
                                         />
                                     </SwiperSlide>
                                     ))}
                                 </Swiper>
-                                {/* <Slider {...project.settingsModal} className="sm:max-w-sm max-w-[250px] mx-auto">
-                                    {project.images.map((image, index) => (
-                                        <div key={index} className='w-fit'>
-                                            {console.log(image)}
-                                            <img src={image} className="sm:h-64 h-50 w-fit object-contain" alt={`Image ${index}`} />
-                                        </div>
-                                    ))}
-                                </Slider> */}
                             </div>
                             </Dialog.Panel>
                         </Transition.Child>

@@ -4,6 +4,10 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
+import plabs_thumbnail from "../img/projects/plabs/thumbnail.png"
+import rs_thumbnail from "../img/projects/rumahsehat-mobile/thumbnail.png"
+import evomo_thumbnail from "../img/projects/evomo/thumbnail.png"
+
 import android_icon from "../img/small-tech-icons/android.png"
 import bootstrap_icon from "../img/small-tech-icons/bootstrap5.png"
 import django_icon from "../img/small-tech-icons/django.png"
@@ -113,6 +117,7 @@ function Projects() {
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/profile.jpg",
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/logout.jpg"
             ],
+            thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/thumbnail.jpg",
             stacks: [
                 android_icon,
                 firebase_icon,
@@ -138,6 +143,7 @@ function Projects() {
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/plabs/employee_admin.png",
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/plabs/leave_admin.png",
             ],
+            thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/plabs/thumbnail.png",
             stacks: [
                 react_icon,
                 tailwind_icon,
@@ -162,6 +168,7 @@ function Projects() {
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/detailappointment.png",
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/logout.png",
             ],
+            thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/thumbnail.png",
             stacks: [
                 fluttter_icon,
                 spring_icon,
@@ -180,6 +187,7 @@ function Projects() {
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-web/rumahsehatweb-home.png",
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-web/rumahsehatweb-chart.png"
             ],
+            thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/thumbnail.png",
             stacks: [
                 bootstrap_icon,
                 spring_icon,
@@ -200,46 +208,19 @@ function Projects() {
 
     return (
         <div id="projects" className="flex sm:h-fit justify-center items-center sm:pt-24 pt-36 pb-16">
-            <div className="sm:mx-auto sm:w-4/5 mx-10">
+            <div className="sm:mx-auto sm:w-4/6 mx-8">
                 <h1 className="text-center font-semibold text-gray-900 sm:text-7xl text-3xl">Projects</h1>
                 <Modal open={open} onClose={() => setOpen(false)} project={project}/>
-                <div className="grid sm:grid-cols-3 grid-cols-1 gap-4 sm:pt-10">
+                <div className="grid sm:grid-cols-3 grid-cols-1 gap-8 sm:pt-10">
                     {projects.map(content => {
                             return (
                                 <>
                                     <div onClick={() => onClick(content)} key={content.id}>
                                         <div className="sm:mt-0 mt-5">
-                                        <Swiper
-                                            slidesPerView={1}
-                                            spaceBetween={5}
-                                            loop={true}
-                                            pagination={{
-                                            clickable: true,
-                                            }}
-                                            modules={[Pagination, Navigation]}
-                                            className=""
-                                        >
-                                            {content.images.map((image, index) => (
-                                            <SwiperSlide key={index}>
-                                                <img
-                                                src={image}
-                                                className="sm:h-64 h-50 max-w-80 w-full object-contain"
-                                                alt={`Image ${index}`}
-                                                />
-                                            </SwiperSlide>
-                                            ))}
-                                        </Swiper>
-                                            {/* <Slider {...content.settings}>
-                                                {content.images.map(image => {
-                                                    return (
-                                                        <div>
-                                                            <img src={image} className="sm:h-64 h-50 max-w-80 w-full object-contain"/>
-                                                        </div>
-                                                    );
-                                                })}
-                                            </Slider> */}
-                                            <div className="">
-                                                <h2 className="text-start font-semibold text-gray-900 sm:text-md pr-2">{content.id}
+                                            <img src={content.thumbnail} className="rounded-lg" />
+                                            <div>
+                                                <h2 className="text-start font-semibold text-gray-900 sm:text-sm pr-2 mt-2">
+                                                    {content.id}
                                                 </h2>
                                             </div>
                                         </div>
