@@ -5,7 +5,7 @@ class Footer extends React.Component {
     render() {
       return (
         <>
-        <footer className="py-4">
+        <footer className="pb-4 pt-10">
             <div className="mx-auto max-w-7xl px-6 py-4 md:flex md:items-center md:justify-between lg:px-8">
                 <p className="text-center text-xs leading-5 text-gray-500">© 2023 David Johan Hasiholan Parhusip</p>
                 {/* <p className="text-center text-xs leading-5 text-gray-500">Undergraduate Information Systems Student</p> */}

@@ -2,11 +2,6 @@ import React, { useState } from "react";
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Slider from 'react-slick';
-
-import plabs_thumbnail from "../img/projects/plabs/thumbnail.png"
-import rs_thumbnail from "../img/projects/rumahsehat-mobile/thumbnail.png"
-import evomo_thumbnail from "../img/projects/evomo/thumbnail.png"
 
 import android_icon from "../img/small-tech-icons/android.png"
 import bootstrap_icon from "../img/small-tech-icons/bootstrap5.png"
@@ -20,6 +15,11 @@ import postgresql_icon from "../img/small-tech-icons/postfresql.png"
 import react_icon from "../img/small-tech-icons/reactjs.png"
 import spring_icon from "../img/small-tech-icons/spring.png"
 import tailwind_icon from "../img/small-tech-icons/tailwind.png"
+import html_icon from "../img/small-tech-icons/html5.png"
+import css_icon from "../img/small-tech-icons/css3.png"
+import js_icon from "../img/small-tech-icons/js.png"
+import php_icon from "../img/small-tech-icons/php.png"
+
 
 import { FaBeer, FaGithub } from 'react-icons/fa';
 import Modal from "./projectModal";
@@ -33,68 +33,13 @@ import 'swiper/css/navigation';
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
 
-const CustomArrow = (props) => {
-    const { className, style, onClick } = props;
-        return (
-        <button
-        className={`${className} z-10`}
-            style={{ ...style, width: '90px', height: '50px', color: 'black', }}
-            onClick={onClick}
-        >
-            Previous
-        </button>
-        );
-};
+import { Tab } from '@headlessui/react'
+
+function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+  }
 
 function Projects() { 
-    const settings = {
-        dots: false,
-        infinite: true,
-        autoplay: false,
-        autoplaySpeed: 4000, 
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        prevArrow: <CustomArrow />,
-        nextArrow: <CustomArrow />
-    };
-
-    const settingsMobile = {
-        dots: false,
-        infinite: true,
-        autoplay: false,
-        autoplaySpeed: 4000, 
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        prevArrow: <CustomArrow />,
-        nextArrow: <CustomArrow />
-    };
-
-    const settingsModal = {
-        dots: false,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 4000, 
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        prevArrow: <CustomArrow />,
-        nextArrow: <CustomArrow />
-    };
-
-    const settingsMobileModal = {
-        dots: false,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 4000, 
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        prevArrow: <CustomArrow />,
-        nextArrow: <CustomArrow />
-    };
-
     const projects = [
         {
             id: "BeltTrackr - Evomo Manufacture Product Counter Application",
@@ -123,8 +68,6 @@ function Projects() {
                 firebase_icon,
                 kotlin_icon
             ],
-            settings: settingsMobile,
-            settingsModal: settingsMobileModal
         },
         {
             id: "Emplova - PLABS.ID HR Management System",
@@ -150,8 +93,6 @@ function Projects() {
                 go_icon,
                 postgresql_icon
             ],
-            settings: settings,
-            settingsModal: settingsModal
         },
         {
             id: "RumahSehat Mobile",
@@ -174,8 +115,6 @@ function Projects() {
                 spring_icon,
                 mysql_icon
             ],
-            settings: settingsMobile,
-            settingsModal: settingsMobileModal
         },
         {
             id: "RumahSehat Website",
@@ -193,10 +132,68 @@ function Projects() {
                 spring_icon,
                 mysql_icon
             ],
-            settings: settings,
-            settingsModal: settingsModal
         },
         ];
+    
+    const works = [
+            {
+                id: "Telkom Indonesia",
+                desc: "Responsible as Mobile Developer and developed machine learning application to count products on manufacture factories. Worked closely with the UI/UX designer and other stakeholders.",
+                images: "",
+                thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/telkom/thumbnail.png",
+                stacks: [
+                    android_icon,
+                    kotlin_icon
+                ],
+                repo: "",
+            },
+            {
+                id: "CrescentRating & HalalTrip",
+                desc: "Responsible as Frontend Developer on maintaining the CrescentRating & HalalTrip website. Worked closely with the UI/UX designer and other stakeholders.",
+                images: "",
+                thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/crescent/thumbnail.png",
+                stacks: [
+                    html_icon,
+                    css_icon,
+                    js_icon,
+                    php_icon
+                ],
+                repo: "",
+            },
+        ];
+
+    const organization = [
+        {
+            id: "BEM Fasilkom UI",
+            desc: "Responsible as Head of Sports Department and initiated 15 pandemic-friendly sports programs in Fasilkom UI. Responsible for leading and managing 14 teammates to run the programs, which aims to encourage Fasilkom elements such as students to care about healthy lifestyles during the pandemics. Sucesfully initiated offline sports programs such as Dekan Cup, which is a sports tournament open for Fasilkom students and alumni.",
+            images: "",
+            thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/organizations/bem/thumbnail.png",
+            stacks: "",
+            repo: "",
+        },
+        {
+            id: "Pesta Rakyat Fasilkom",
+            desc: "Responsible as Project Officer on leading 14 Division Manager and 150 staff to run the whole event, which aims to build kinship among Fasilkom elements such as students, lecturers, faculty staffs, and alumni. Sucessfully approached Ecomindo and PANDI as sponsors of the event. Redesigned all the event activities and initiated offline events such as Basketball and Mini Soccer Tournament.",
+            images: "",
+            thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/organizations/perak/thumbnail.png",
+            stacks: "",
+            repo: "",
+        },
+        {
+            id: "COMPFEST 13",
+            desc: "Responsible for Online Job Fair with Playground with 60+ company as exhibitors such as PwC, Deloitte, Blibli, Binar Academy, PINTU, and many more. Successfully approached CODEX, Forky,id, and Algobash to be exhibitors on Online Job Fair with Playground event. Responsible as Liason Officer for CODEX, Forky,id, and Algobash during the event period.",
+            images: "",
+            thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/organizations/compfest/thumbnail.png",
+            stacks: "",
+            repo: "",
+        },
+    ];
+
+    let [categories] = useState({
+        Work: works,
+        Project: projects,
+        Organization: organization
+        })
 
     const [open, setOpen] = useState(false);
     const [project, setProject] = useState("");
@@ -209,9 +206,58 @@ function Projects() {
     return (
         <div id="projects" className="flex sm:h-fit justify-center items-center sm:pt-24 pt-36 pb-16">
             <div className="sm:mx-auto sm:w-4/6 mx-8">
-                <h1 className="text-center font-semibold text-gray-900 sm:text-7xl text-3xl">Projects</h1>
                 <Modal open={open} onClose={() => setOpen(false)} project={project}/>
-                <div className="grid sm:grid-cols-3 grid-cols-1 gap-8 sm:pt-10">
+                <Tab.Group>
+                    <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
+                    {Object.keys(categories).map((category) => (
+                        <Tab
+                        key={category}
+                        className={({ selected }) =>
+                            classNames(
+                            'w-full rounded-lg py-2.5 sm:text-sm text-xs font-medium leading-5 text-grey',
+                            'ring-white ring-opacity-60 ring-offset-0 ring-offset-black focus:outline-none focus:ring-0',
+                            selected
+                                ? 'bg-white shadow'
+                                : 'text-gray-100 hover:bg-white/[0.12] hover:text-white'
+                            )
+                        }
+                        >
+                        {category}
+                        </Tab>
+                    ))}
+                    </Tab.List>
+                    <Tab.Panels className="mt-2">
+                    {Object.values(categories).map((posts, idx) => (
+                        <Tab.Panel
+                        key={idx}
+                        className={classNames(
+                            'rounded-xl'
+                        )}
+                        >
+                            <div className="grid sm:grid-cols-3 grid-cols-1 gap-8 sm:pt-10">
+                                {posts.map(content => {
+                                        return (
+                                            <>
+                                                <div onClick={() => onClick(content)} key={content.id}>
+                                                    <div className="sm:mt-0 mt-5">
+                                                        <img src={content.thumbnail} className="rounded-lg" />
+                                                        <div>
+                                                            <h2 className="text-start font-semibold text-gray-900 sm:text-sm pr-2 mt-2">
+                                                                {content.id}
+                                                            </h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </>
+                                        );
+                                    })}
+                            </div>
+                        </Tab.Panel>
+                    ))}
+                    </Tab.Panels>
+                </Tab.Group>
+                {/* <h1 className="text-center font-semibold text-gray-900 sm:text-7xl text-3xl">Projects</h1> */}
+                {/* <div className="grid sm:grid-cols-3 grid-cols-1 gap-8 sm:pt-10">
                     {projects.map(content => {
                             return (
                                 <>
@@ -228,7 +274,7 @@ function Projects() {
                                 </>
                             );
                         })}
-                </div>
+                </div> */}
             </div>
         </div>
     );

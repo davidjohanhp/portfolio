@@ -60,37 +60,45 @@ export default function Modal({open, onClose, project}) {
                                         {project.desc}
                                     </p>
                                     <div className="">
-                                        <div className="flex mt-1">
-                                            {project.stacks.map(icons => {
-                                                return (
-                                                    <div key={project.id}>
-                                                        <img src={icons} className="max-h-8 max-w-8 sm:max-h-10 sm:max-w-10"/>
-                                                    </div>
-                                                );
-                                            })}
-                                        </div>
+                                        {
+                                            project.stacks != "" ? 
+                                                <div className="flex mt-1">
+                                                    {project.stacks.map(icons => {
+                                                        return (
+                                                            <div key={project.id}>
+                                                                <img src={icons} className="max-h-8 max-w-8 sm:max-h-10 sm:max-w-10"/>
+                                                            </div>
+                                                        );
+                                                    })}
+                                                </div>
+                                            : null
+                                        }
                                     </div>
                                 </div>
-                                <Swiper
-                                    slidesPerView={1}
-                                    spaceBetween={5}
-                                    loop={true}
-                                    pagination={{
-                                    clickable: true,
-                                    }}
-                                    modules={[Pagination, Navigation]}
-                                    className="w-full sm:h-full"
-                                >
-                                    {project.images.map((image, index) => (
-                                    <SwiperSlide key={index}>
-                                        <img
-                                        src={image}
-                                        className="h-64 max-w-80 w-full object-contain"
-                                        alt={`Image ${index}`}
-                                        />
-                                    </SwiperSlide>
-                                    ))}
-                                </Swiper>
+                                {
+                                    project.images != "" ? 
+                                        <Swiper
+                                            slidesPerView={1}
+                                            spaceBetween={5}
+                                            loop={true}
+                                            pagination={{
+                                            clickable: true,
+                                            }}
+                                            modules={[Pagination, Navigation]}
+                                            className="w-full sm:h-full"
+                                        >
+                                            {project.images.map((image, index) => (
+                                            <SwiperSlide key={index}>
+                                                <img
+                                                src={image}
+                                                className={`h-64 max-w-80 w-full object-contain`}
+                                                alt={`Image ${index}`}
+                                                />
+                                            </SwiperSlide>
+                                            ))}
+                                        </Swiper>
+                                    : null
+                                }
                             </div>
                             </Dialog.Panel>
                         </Transition.Child>
