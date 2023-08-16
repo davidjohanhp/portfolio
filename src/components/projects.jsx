@@ -42,9 +42,12 @@ function classNames(...classes) {
 function Projects() { 
     const projects = [
         {
-            id: "BeltTrackr - Evomo Manufacture Product Counter Application",
+            id: "BeltTrackr",
+            title: "BeltTrackr - Evomo Manufacture Product Counter Application",
             desc: "An application for Evomo that provides feature to count the quantity of products in, out, and rejects on a conveyor belt for manufacturing purposes. \
             The main purpose is to solve the need for manufacturing companies to have highly customizable and scalable systems and sensors for object detection.",
+            position: "Mobile Developer",
+            date: "May - Jun, 2023",
             repo: "https://github.com/C23-CT02",
             images: [
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/login.jpg",
@@ -70,10 +73,13 @@ function Projects() {
             ],
         },
         {
-            id: "Emplova - PLABS.ID HR Management System",
+            id: "Emplova",
+            title: "Emplova - PLABS.ID HR Management System",
             desc: "An application for PLABS.id that provides features such as attendance management, location based absent, \
             payroll management, salary slip document generator, activity reports, and more.\
             Responsible as Lead Programmer on managing and controlling 4 teammates on development process.",
+            position: "Fullstack Developer",
+            date: "Feb - Jun, 2023",
             repo: "",
             images: [
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/plabs/login.png",
@@ -95,9 +101,11 @@ function Projects() {
             ],
         },
         {
-            id: "RumahSehat Mobile",
+            id: "RumahSehat (Mobile)",
             desc: "RumahSehat is a Flutter-based application that provides features for patients to support hospitals or clinics such as making an appointment, \
             viewing bills, viewing recipes, and viewing upcoming appointments.",
+            position: "Mobile Developer",
+            date: "Nov - Dec, 2023",
             repo: "https://gitlab.cs.ui.ac.id/david.johan/ta_a_ori_55/-/tree/main/rumahSehat_mobile",
             images: [
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/login.png",
@@ -117,9 +125,11 @@ function Projects() {
             ],
         },
         {
-            id: "RumahSehat Website",
+            id: "RumahSehat (Website)",
             desc: "RumahSehat is a website designated for hospital staffs that provides features to support hospitals or clinics such as maintaining appointments, \
             viewing bills, viewing recipes, and viewing upcoming appointments.",
+            position: "Fullstack Developer",
+            date: "Nov - Dec, 2023",
             repo: "https://gitlab.cs.ui.ac.id/david.johan/ta_a_ori_55/-/tree/main/rumahSehat",
             images: [
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-web/rumahsehatweb-login.png",
@@ -139,6 +149,8 @@ function Projects() {
             {
                 id: "Telkom Indonesia",
                 desc: "Responsible as Mobile Developer and developed machine learning application to count products on manufacture factories. Worked closely with the UI/UX designer and other stakeholders.",
+                position: "Mobile Developer",
+                date: "Jul, 2023 - Present",
                 images: "",
                 thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/telkom/thumbnail.png",
                 stacks: [
@@ -150,6 +162,8 @@ function Projects() {
             {
                 id: "CrescentRating & HalalTrip",
                 desc: "Responsible as Frontend Developer on maintaining the CrescentRating & HalalTrip website. Worked closely with the UI/UX designer and other stakeholders.",
+                position: "Frontend Developer",
+                date: "Jul, 2023 - Present",
                 images: "",
                 thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/crescent/thumbnail.png",
                 stacks: [
@@ -160,12 +174,28 @@ function Projects() {
                 ],
                 repo: "",
             },
+            {
+                id: "Bangkit Academy 2023",
+                desc: "Bangkit Academy is an intensive technology and professional development program by Google, GoTo, and Traveloka that aims to equip individuals with the skills and knowledge needed to excel in the tech industry. Selected as the Best Team at Bangkit Company Capstone Project in collaboration with Evomo and as the top 1000 performing students in English courses & tests.",
+                position: "Mobile Developer Cohort",
+                date: "Feb - Jul, 2023",
+                images: "",
+                thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/bangkit/thumbnail.png",
+                stacks: [
+                    android_icon,
+                    firebase_icon,
+                    kotlin_icon
+                ],
+                repo: "",
+            },
         ];
 
     const organization = [
         {
             id: "BEM Fasilkom UI",
             desc: "Responsible as Head of Sports Department and initiated 15 pandemic-friendly sports programs in Fasilkom UI. Responsible for leading and managing 14 teammates to run the programs, which aims to encourage Fasilkom elements such as students to care about healthy lifestyles during the pandemics. Sucesfully initiated offline sports programs such as Dekan Cup, which is a sports tournament open for Fasilkom students and alumni.",
+            position: "Head of Sports Department",
+            date: "Feb, 2022 - Jan, 2023",
             images: "",
             thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/organizations/bem/thumbnail.png",
             stacks: "",
@@ -174,6 +204,8 @@ function Projects() {
         {
             id: "Pesta Rakyat Fasilkom",
             desc: "Responsible as Project Officer on leading 14 Division Manager and 150 staff to run the whole event, which aims to build kinship among Fasilkom elements such as students, lecturers, faculty staffs, and alumni. Sucessfully approached Ecomindo and PANDI as sponsors of the event. Redesigned all the event activities and initiated offline events such as Basketball and Mini Soccer Tournament.",
+            position: "Project Officer",
+            date: "Jun, 2021 - Jun, 2022",
             images: "",
             thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/organizations/perak/thumbnail.png",
             stacks: "",
@@ -182,6 +214,8 @@ function Projects() {
         {
             id: "COMPFEST 13",
             desc: "Responsible for Online Job Fair with Playground with 60+ company as exhibitors such as PwC, Deloitte, Blibli, Binar Academy, PINTU, and many more. Successfully approached CODEX, Forky,id, and Algobash to be exhibitors on Online Job Fair with Playground event. Responsible as Liason Officer for CODEX, Forky,id, and Algobash during the event period.",
+            position: "Staff of Playground",
+            date: "Mar - Nov, 2021",
             images: "",
             thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/organizations/compfest/thumbnail.png",
             stacks: "",
@@ -238,13 +272,19 @@ function Projects() {
                                 {posts.map(content => {
                                         return (
                                             <>
-                                                <div onClick={() => onClick(content)} key={content.id}>
+                                                <div key={content.id}>
                                                     <div className="sm:mt-0 mt-5">
-                                                        <img src={content.thumbnail} className="rounded-lg" />
+                                                        <img onClick={() => onClick(content)} src={content.thumbnail} className="rounded-lg" />
                                                         <div>
-                                                            <h2 className="text-start font-semibold text-gray-900 sm:text-sm pr-2 mt-2">
+                                                            <span className={
+                                                                content.date.includes("Present") ?
+                                                                `mt-4 inline-flex items-center rounded-full bg-blue-400/10 px-2 py-1 text-xs text-blue-500 ring-1 ring-inset ring-blue-500/20` :
+                                                                `mt-4 inline-flex items-center rounded-full bg-gray-400/10 px-2 py-1 text-xs text-gray-500 ring-1 ring-inset ring-gray-500/20`
+                                                        }>{content.date}</span>
+                                                            <h2 className="text-start font-semibold text-gray-900 sm:text-md pr-2 mt-2">
                                                                 {content.id}
                                                             </h2>
+                                                            <p className="text-start text-gray-500 text-sm"> {content.position} </p>
                                                         </div>
                                                     </div>
                                                 </div>
