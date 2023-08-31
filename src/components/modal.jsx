@@ -15,10 +15,10 @@ import 'swiper/css/navigation';
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
 
-export default function projectModal({open, onClose, project}) {
+export default function Modal({open, onClose, experience}) {
     return (
         <>
-        {project ?
+        {experience ?
             <Transition appear show={open} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={onClose}>
                 <Transition.Child
@@ -50,15 +50,21 @@ export default function projectModal({open, onClose, project}) {
                                 as="h2"
                                 className="text-start font-semibold text-gray-900 sm:text-2xl pr-2"
                             >
-                                { project.title !=null ? project.title : project.id }
-                                <a href={project.repo} title="Github" target="_blank" className={`focus:outline-none ${project.repo === "" ? 'hidden' : ''}`}>
+                                { experience.title !=null ? experience.title : experience.id }
+                                <a href={experience.repo} title="Github" target="_blank" className={`focus:outline-none ${experience.repo === "" ? 'hidden' : ''}`}>
                                     <FaGithub className="inline-block ml-1 mb-1" size={20} />
                                 </a>
                             </Dialog.Title>
                             <div className='sm:flex sm:items-center sm:pt-6 pt-3'>
                                 <div className='sm:w-3/5'>
                                     {
-                                        project.images != "" ? 
+                                        experience.images.length === 1 ?
+                                        <img
+                                            src={experience.images[0]}
+                                            className={`max-h-64 object-contain rounded-lg shadow-xl`}
+                                            alt={`Image 0`}
+                                        /> :
+                                        (experience.images.length > 1 && experience.images != "") ? 
                                             <Swiper
                                                 slidesPerView={1}
                                                 spaceBetween={5}
@@ -68,11 +74,11 @@ export default function projectModal({open, onClose, project}) {
                                                 }}
                                                 modules={[Pagination, Navigation]}
                                             >
-                                                {project.images.map((image, index) => (
+                                                {experience.images.map((image, index) => (
                                                 <SwiperSlide key={index}>
                                                     <img
                                                     src={image}
-                                                    className={`max-h-64 w-full object-contain`}
+                                                    className={`max-h-64  w-full object-contain`}
                                                     alt={`Image ${index}`}
                                                     />
                                                 </SwiperSlide>
@@ -81,19 +87,19 @@ export default function projectModal({open, onClose, project}) {
                                         : null
                                     }
                                 </div>
-                                <div className='sm:w-2/5 sm:pl-6'>
+                                <div className='sm:w-2/5 pl-2'>
                                     <div className="flex flex-col sm:gap-1 gap-5">
                                         <div className="sm:mt-2 sm:pt-0 pt-5">
-                                            <p className="sm:text-md sm:leading-8 text-sm leading-6 text-gray-500">
-                                                {project.desc}
+                                            <p className="sm:text-md sm:leading-8 text-sm leading-8 text-gray-500">
+                                                {experience.desc}
                                             </p>
                                             <div className="">
                                                 {
-                                                    project.stacks != "" ? 
+                                                    experience.stacks != "" ? 
                                                         <div className="flex mt-1">
-                                                            {project.stacks.map(icons => {
+                                                            {experience.stacks.map(icons => {
                                                                 return (
-                                                                    <div key={project.id}>
+                                                                    <div key={experience.id}>
                                                                         <img src={icons} className="max-h-8 max-w-8 sm:max-h-10 sm:max-w-10"/>
                                                                     </div>
                                                                 );

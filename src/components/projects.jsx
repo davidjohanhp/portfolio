@@ -22,7 +22,8 @@ import php_icon from "../img/small-tech-icons/php.png"
 
 
 import { FaBeer, FaGithub } from 'react-icons/fa';
-import Modal from "./projectModal";
+import ProjectModal from "./projectModal";
+import Modal from "./modal";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -151,7 +152,7 @@ function Projects() {
                 desc: "Responsible as Mobile Developer and developed machine learning application to count products on manufacture factories. Worked closely with the UI/UX designer and other stakeholders.",
                 position: "Mobile Developer",
                 date: "Jul, 2023 - Present",
-                images: "",
+                images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/telkom/thumbnail.png"],
                 thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/telkom/thumbnail.png",
                 stacks: [
                     android_icon,
@@ -161,10 +162,10 @@ function Projects() {
             },
             {
                 id: "CrescentRating & HalalTrip",
-                desc: "Responsible as Frontend Developer on maintaining the CrescentRating & HalalTrip website. Worked closely with the UI/UX designer and other stakeholders.",
+                desc: "CrescentRating is the world's leading authority on halal-friendly travel. Responsible as Frontend Developer on maintaining the CrescentRating & HalalTrip website. Worked closely with the UI/UX designer and other stakeholders.",
                 position: "Frontend Developer",
                 date: "Jul, 2023 - Present",
-                images: "",
+                images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/crescent/thumbnail.png"],
                 thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/crescent/thumbnail.png",
                 stacks: [
                     html_icon,
@@ -179,7 +180,7 @@ function Projects() {
                 desc: "Bangkit Academy is an intensive technology and professional development program by Google, GoTo, and Traveloka that aims to equip individuals with the skills and knowledge needed to excel in the tech industry. Selected as the Best Team at Bangkit Company Capstone Project in collaboration with Evomo and as the top 1000 performing students in English courses & tests.",
                 position: "Mobile Developer Cohort",
                 date: "Feb - Jul, 2023",
-                images: "",
+                images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/bangkit/thumbnail.png"],
                 thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/bangkit/thumbnail.png",
                 stacks: [
                     android_icon,
@@ -196,7 +197,7 @@ function Projects() {
             desc: "Responsible as Head of Sports Department and initiated 15 pandemic-friendly sports programs in Fasilkom UI. Responsible for leading and managing 14 teammates to run the programs, which aims to encourage Fasilkom elements such as students to care about healthy lifestyles during the pandemics. Sucesfully initiated offline sports programs such as Dekan Cup, which is a sports tournament open for Fasilkom students and alumni.",
             position: "Head of Sports Department",
             date: "Feb, 2022 - Jan, 2023",
-            images: "",
+            images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/organizations/bem/thumbnail.png"],
             thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/organizations/bem/thumbnail.png",
             stacks: "",
             repo: "",
@@ -206,7 +207,7 @@ function Projects() {
             desc: "Responsible as Project Officer on leading 14 Division Manager and 150 staff to run the whole event, which aims to build kinship among Fasilkom elements such as students, lecturers, faculty staffs, and alumni. Sucessfully approached Ecomindo and PANDI as sponsors of the event. Redesigned all the event activities and initiated offline events such as Basketball and Mini Soccer Tournament.",
             position: "Project Officer",
             date: "Jun, 2021 - Jun, 2022",
-            images: "",
+            images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/organizations/perak/thumbnail.png"],
             thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/organizations/perak/thumbnail.png",
             stacks: "",
             repo: "",
@@ -216,7 +217,7 @@ function Projects() {
             desc: "Responsible for Online Job Fair with Playground with 60+ company as exhibitors such as PwC, Deloitte, Blibli, Binar Academy, PINTU, and many more. Successfully approached CODEX, Forky,id, and Algobash to be exhibitors on Online Job Fair with Playground event. Responsible as Liason Officer for CODEX, Forky,id, and Algobash during the event period.",
             position: "Staff of Playground",
             date: "Mar - Nov, 2021",
-            images: "",
+            images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/organizations/compfest/thumbnail.png"],
             thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/organizations/compfest/thumbnail.png",
             stacks: "",
             repo: "",
@@ -229,18 +230,26 @@ function Projects() {
         Organization: organization
         })
 
+    const [openProject, setOpenProject] = useState(false);
     const [open, setOpen] = useState(false);
     const [project, setProject] = useState("");
+    const [exp, setExp] = useState("");
+
+    function onClickProject(selected) {
+        setOpenProject(true)
+        setProject(selected)
+    }
 
     function onClick(selected) {
         setOpen(true)
-        setProject(selected)
+        setExp(selected)
     }
 
     return (
         <div id="projects" className="flex sm:h-fit justify-center items-center sm:pt-24 pt-36 pb-16">
             <div className="sm:mx-auto sm:w-4/6 mx-8">
-                <Modal open={open} onClose={() => setOpen(false)} project={project}/>
+                <ProjectModal open={openProject} onClose={() => setOpenProject(false)} project={project}/>
+                <Modal open={open} onClose={() => setOpen(false)} experience={exp} />
                 <Tab.Group>
                     <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
                     {Object.keys(categories).map((category) => (
@@ -274,7 +283,8 @@ function Projects() {
                                             <>
                                                 <div key={content.id}>
                                                     <div className="sm:mt-0 mt-5">
-                                                        <img onClick={() => onClick(content)} src={content.thumbnail} className="rounded-lg" />
+                                                        <img onClick={ categories.Project === posts ?
+                                                            () => onClickProject(content) : () => onClick(content)} src={content.thumbnail} className="rounded-lg" />
                                                         <div>
                                                             <span className={
                                                                 content.date.includes("Present") ?
@@ -296,25 +306,6 @@ function Projects() {
                     ))}
                     </Tab.Panels>
                 </Tab.Group>
-                {/* <h1 className="text-center font-semibold text-gray-900 sm:text-7xl text-3xl">Projects</h1> */}
-                {/* <div className="grid sm:grid-cols-3 grid-cols-1 gap-8 sm:pt-10">
-                    {projects.map(content => {
-                            return (
-                                <>
-                                    <div onClick={() => onClick(content)} key={content.id}>
-                                        <div className="sm:mt-0 mt-5">
-                                            <img src={content.thumbnail} className="rounded-lg" />
-                                            <div>
-                                                <h2 className="text-start font-semibold text-gray-900 sm:text-sm pr-2 mt-2">
-                                                    {content.id}
-                                                </h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </>
-                            );
-                        })}
-                </div> */}
             </div>
         </div>
     );
