@@ -28,7 +28,7 @@ class Home extends React.Component {
                                     repeat={Infinity}
                                 />
                             </span>
-                            <span className="lg:hidden xs:visible">
+                            <span className="sm:hidden xs:visible">
                                 &nbsp;Software Engineer
                             </span>
                         </span>

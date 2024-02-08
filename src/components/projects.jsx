@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -35,6 +35,7 @@ import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
 
 import { Tab } from '@headlessui/react'
+import Loading from "./loading";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -144,27 +145,14 @@ function Projects() {
                 mysql_icon
             ],
         },
-        ];
+    ];
     
     const works = [
-            {
-                id: "Telkom Indonesia",
-                desc: "Responsible as Mobile Developer and developed machine learning application to count products on manufacture factories. Worked closely with the UI/UX designer and other stakeholders.",
-                position: "Mobile Developer",
-                date: "Jul, 2023 - Present",
-                images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/telkom/thumbnail.png"],
-                thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/telkom/thumbnail.png",
-                stacks: [
-                    android_icon,
-                    kotlin_icon
-                ],
-                repo: "",
-            },
             {
                 id: "CrescentRating & HalalTrip",
                 desc: "CrescentRating is the world's leading authority on halal-friendly travel. Responsible as Frontend Developer on maintaining the CrescentRating & HalalTrip website. Worked closely with the UI/UX designer and other stakeholders.",
                 position: "Frontend Developer",
-                date: "Jul, 2023 - Present",
+                date: "Jul, 2023 - Nov, 2023",
                 images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/crescent/thumbnail.png"],
                 thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/crescent/thumbnail.png",
                 stacks: [
@@ -172,6 +160,19 @@ function Projects() {
                     css_icon,
                     js_icon,
                     php_icon
+                ],
+                repo: "",
+            },
+            {
+                id: "Telkom Indonesia",
+                desc: "Responsible as Mobile Developer and developed machine learning application to count products on manufacture factories. Worked closely with the UI/UX designer and other stakeholders.",
+                position: "Mobile Developer",
+                date: "Jul, 2023 - Sep, 2023",
+                images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/telkom/thumbnail.png"],
+                thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/telkom/thumbnail.png",
+                stacks: [
+                    android_icon,
+                    kotlin_icon
                 ],
                 repo: "",
             },
@@ -189,7 +190,7 @@ function Projects() {
                 ],
                 repo: "",
             },
-        ];
+    ];
 
     const organization = [
         {
@@ -232,82 +233,119 @@ function Projects() {
 
     const [openProject, setOpenProject] = useState(false);
     const [open, setOpen] = useState(false);
-    const [project, setProject] = useState("");
     const [exp, setExp] = useState("");
-
-    function onClickProject(selected) {
-        setOpenProject(true)
-        setProject(selected)
-    }
 
     function onClick(selected) {
         setOpen(true)
         setExp(selected)
     }
+    
+    const [activeTab, setActiveTab] = useState('Work');
+    const [tabLoading, setTabLoading] = useState({ Work: true, Project: true, Organization: true });
+    const [imagesLoaded, setImagesLoaded] = useState(0);
+    const [totalImages, setTotalImages] = useState(0);
 
+    function calculateTotalImagesForTab(tabId) {
+        const tabContent = categories[tabId];
+        return tabContent.length;
+    }
+
+    useEffect(() => {
+        const imagesCount = calculateTotalImagesForTab(activeTab);
+        setTotalImages(imagesCount);
+        setImagesLoaded(0); 
+        setTabLoading(prev => ({ ...prev, [activeTab]: imagesCount > 0 })); 
+    }, [activeTab]);
+      
+    function handleImageLoaded() {
+        setImagesLoaded(prev => {
+          const newCount = prev + 1;
+          if (newCount >= totalImages) {
+            setTabLoading(prev => ({ ...prev, [activeTab]: false }));
+          }
+          return newCount;
+        });
+      }    
+      
+      function onTabSelect(tabIndex) {
+        const tabIds = Object.keys(categories);
+        const selectedTabId = tabIds[tabIndex];
+        setActiveTab(selectedTabId);
+
+        setImagesLoaded(0);
+        const imagesCount = calculateTotalImagesForTab(selectedTabId);
+        setTotalImages(imagesCount);
+        setTabLoading(prev => ({ ...prev, [selectedTabId]: imagesCount > 0 })); 
+      }      
     return (
-        <div id="projects" className="flex sm:h-fit justify-center items-center sm:pt-24 pt-36 pb-16">
-            <div className="sm:mx-auto sm:w-4/6 mx-8">
-                <ProjectModal open={openProject} onClose={() => setOpenProject(false)} project={project}/>
-                <Modal open={open} onClose={() => setOpen(false)} experience={exp} />
-                <Tab.Group>
-                    <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
-                    {Object.keys(categories).map((category) => (
-                        <Tab
-                        key={category}
-                        className={({ selected }) =>
-                            classNames(
-                            'w-full rounded-lg py-2.5 sm:text-sm text-xs font-medium leading-5 text-grey',
-                            'ring-white ring-opacity-60 ring-offset-0 ring-offset-black focus:outline-none focus:ring-0',
-                            selected
-                                ? 'bg-white shadow'
-                                : 'text-gray-100 hover:bg-white/[0.12] hover:text-white'
-                            )
-                        }
-                        >
-                        {category}
-                        </Tab>
-                    ))}
-                    </Tab.List>
-                    <Tab.Panels className="mt-2">
-                    {Object.values(categories).map((posts, idx) => (
-                        <Tab.Panel
-                        key={idx}
-                        className={classNames(
-                            'rounded-xl'
-                        )}
-                        >
-                            <div className="grid sm:grid-cols-3 grid-cols-1 gap-8 sm:pt-10">
-                                {posts.map(content => {
-                                        return (
-                                            <>
-                                                <div key={content.id}>
-                                                    <div className="sm:mt-0 mt-5">
-                                                        <img onClick={ categories.Project === posts ?
-                                                            () => onClickProject(content) : () => onClick(content)} src={content.thumbnail} className="rounded-lg" />
-                                                        <div>
-                                                            <span className={
-                                                                content.date.includes("Present") ?
-                                                                `mt-4 inline-flex items-center rounded-full bg-blue-400/10 px-2 py-1 text-xs text-blue-500 ring-1 ring-inset ring-blue-500/20` :
-                                                                `mt-4 inline-flex items-center rounded-full bg-gray-400/10 px-2 py-1 text-xs text-gray-500 ring-1 ring-inset ring-gray-500/20`
-                                                        }>{content.date}</span>
-                                                            <h2 className="text-start font-semibold text-gray-900 sm:text-md pr-2 mt-2">
-                                                                {content.id}
-                                                            </h2>
-                                                            <p className="text-start text-gray-500 text-sm"> {content.position} </p>
+        <>
+            <div id="projects" className={`flex sm:h-fit justify-center items-center sm:pt-24 pt-36 pb-16`}>
+                <div className="sm:mx-auto sm:w-4/6 mx-8">
+                    <Modal open={open} onClose={() => setOpen(false)} experience={exp} />
+                    <Tab.Group onChange={onTabSelect}>
+                        <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
+                        {Object.keys(categories).map((category) => (
+                            <Tab
+                            key={category}
+                            className={({ selected }) =>
+                                classNames(
+                                'w-full rounded-lg py-2.5 sm:text-sm text-xs font-medium leading-5 text-grey',
+                                'ring-white ring-opacity-60 ring-offset-0 ring-offset-black focus:outline-none focus:ring-0',
+                                selected
+                                    ? 'bg-white shadow'
+                                    : 'text-gray-100 hover:bg-white/[0.12] hover:text-white'
+                                )
+                            }
+                            >
+                            {category}
+                            </Tab>
+                        ))}
+                        </Tab.List>
+                        <Tab.Panels className="mt-2">
+                        {Object.values(categories).map((posts, idx) => (
+                            <Tab.Panel
+                            key={idx}
+                            className={classNames(
+                                'rounded-xl'
+                            )}
+                            >
+                                <div className={`grid sm:grid-cols-3 grid-cols-1 gap-8 sm:pt-10 ${tabLoading[activeTab] ? "hidden" : null}`}>
+                                    {posts.map(content => {
+                                            return (
+                                                <>
+                                                    <div key={content.id}>
+                                                        <div className="sm:mt-0 mt-5">
+                                                            <img onClick={ () => onClick(content)} src={content.thumbnail} className="rounded-lg" 
+                                                                onLoad={handleImageLoaded}
+                                                            />
+                                                            <div>
+                                                                <span className={
+                                                                    content.date.includes("Present") ?
+                                                                    `mt-4 inline-flex items-center rounded-full bg-blue-400/10 px-2 py-1 text-xs text-blue-500 ring-1 ring-inset ring-blue-500/20` :
+                                                                    `mt-4 inline-flex items-center rounded-full bg-gray-400/10 px-2 py-1 text-xs text-gray-500 ring-1 ring-inset ring-gray-500/20`
+                                                            }>{content.date}</span>
+                                                                <h2 className="text-start font-semibold text-gray-900 sm:text-md pr-2 mt-2">
+                                                                    {content.id}
+                                                                </h2>
+                                                                <p className="text-start text-gray-500 text-sm"> {content.position} </p>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </>
-                                        );
-                                    })}
-                            </div>
-                        </Tab.Panel>
-                    ))}
-                    </Tab.Panels>
-                </Tab.Group>
+                                                </>
+                                            );
+                                        })}
+                                </div>
+
+                                <div className={`${!tabLoading[activeTab] ? "hidden" : null} h-10`}>
+                                    <Loading visibility={tabLoading[activeTab]} />
+                                </div>
+                            </Tab.Panel>
+                        ))}
+                        </Tab.Panels>
+                    </Tab.Group>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
   
