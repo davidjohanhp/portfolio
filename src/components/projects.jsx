@@ -144,27 +144,14 @@ function Projects() {
                 mysql_icon
             ],
         },
-        ];
+    ];
     
     const works = [
-            {
-                id: "Telkom Indonesia",
-                desc: "Responsible as Mobile Developer and developed machine learning application to count products on manufacture factories. Worked closely with the UI/UX designer and other stakeholders.",
-                position: "Mobile Developer",
-                date: "Jul, 2023 - Present",
-                images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/telkom/thumbnail.png"],
-                thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/telkom/thumbnail.png",
-                stacks: [
-                    android_icon,
-                    kotlin_icon
-                ],
-                repo: "",
-            },
             {
                 id: "CrescentRating & HalalTrip",
                 desc: "CrescentRating is the world's leading authority on halal-friendly travel. Responsible as Frontend Developer on maintaining the CrescentRating & HalalTrip website. Worked closely with the UI/UX designer and other stakeholders.",
                 position: "Frontend Developer",
-                date: "Jul, 2023 - Present",
+                date: "Jul, 2023 - Nov, 2023",
                 images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/crescent/thumbnail.png"],
                 thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/crescent/thumbnail.png",
                 stacks: [
@@ -172,6 +159,19 @@ function Projects() {
                     css_icon,
                     js_icon,
                     php_icon
+                ],
+                repo: "",
+            },
+            {
+                id: "Telkom Indonesia",
+                desc: "Responsible as Mobile Developer and developed machine learning application to count products on manufacture factories. Worked closely with the UI/UX designer and other stakeholders.",
+                position: "Mobile Developer",
+                date: "Jul, 2023 - Sep, 2023",
+                images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/telkom/thumbnail.png"],
+                thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/telkom/thumbnail.png",
+                stacks: [
+                    android_icon,
+                    kotlin_icon
                 ],
                 repo: "",
             },
@@ -189,7 +189,7 @@ function Projects() {
                 ],
                 repo: "",
             },
-        ];
+    ];
 
     const organization = [
         {
