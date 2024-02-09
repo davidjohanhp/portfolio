@@ -19,7 +19,7 @@ import html_icon from "../img/small-tech-icons/html5.png"
 import css_icon from "../img/small-tech-icons/css3.png"
 import js_icon from "../img/small-tech-icons/js.png"
 import php_icon from "../img/small-tech-icons/php.png"
-
+import rabbitmq_icon from "../img/small-tech-icons/rabbitmq.png"
 
 import { FaBeer, FaGithub } from 'react-icons/fa';
 import ProjectModal from "./projectModal";
@@ -149,6 +149,22 @@ function Projects() {
     
     const works = [
             {
+                id: "Paragon Corp",
+                desc: "Developed Transportation Management System (TMS), focusing on optimizing and managing company logistic processes, including goods loading and delivery route recommendation. \
+                Responsible as Lead Programmer on actively managing project tasks and timelines using Jira, ensuring clear communication and effective tracking of project milestones.",
+                position: "Fullstack Developer",
+                date: "Sep, 2023 - Feb, 2024",
+                images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/paragon/thumbnail.png"],
+                thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/paragon/thumbnail.png",
+                stacks: [
+                    react_icon,
+                    tailwind_icon,
+                    django_icon,
+                    postgresql_icon,
+                ],
+                repo: "",
+            },
+            {
                 id: "CrescentRating & HalalTrip",
                 desc: "CrescentRating is the world's leading authority on halal-friendly travel. Responsible as Frontend Developer on maintaining the CrescentRating & HalalTrip website. Worked closely with the UI/UX designer and other stakeholders.",
                 position: "Frontend Developer",
@@ -165,20 +181,25 @@ function Projects() {
             },
             {
                 id: "Telkom Indonesia",
-                desc: "Responsible as Mobile Developer and developed machine learning application to count products on manufacture factories. Worked closely with the UI/UX designer and other stakeholders.",
+                desc: "Developed Overall Equipment Effectiveness (OEE) Android application with Kotlin, RabbitMQ, and WebSocket. \
+                Assist bug fixing on Computerized Maintenance Management System (CMMS) mobile application with Flutter. \
+                Worked closely with the UI/UX designer and other stakeholders.",
                 position: "Mobile Developer",
                 date: "Jul, 2023 - Sep, 2023",
                 images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/telkom/thumbnail.png"],
                 thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/telkom/thumbnail.png",
                 stacks: [
                     android_icon,
-                    kotlin_icon
+                    kotlin_icon,
+                    fluttter_icon,
+                    rabbitmq_icon
                 ],
                 repo: "",
             },
             {
                 id: "Bangkit Academy 2023",
-                desc: "Bangkit Academy is an intensive technology and professional development program by Google, GoTo, and Traveloka that aims to equip individuals with the skills and knowledge needed to excel in the tech industry. Selected as the Best Team at Bangkit Company Capstone Project in collaboration with Evomo and as the top 1000 performing students in English courses & tests.",
+                desc: "Bangkit Academy is an intensive technology and professional development program by Google, GoTo, and Traveloka that aims to equip individuals with the skills and knowledge needed to excel in the tech industry. \
+                Selected as the Best Team at Bangkit Company Capstone Project in collaboration with Evomo and as the top 1000 performing students in English courses & tests.",
                 position: "Mobile Developer Cohort",
                 date: "Feb - Jul, 2023",
                 images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/bangkit/thumbnail.png"],

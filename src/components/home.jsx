@@ -43,7 +43,7 @@ class Home extends React.Component {
                         <a className="hover:text-gray-600 px-3" href="https://www.instagram.com/davidjohanhp/" target="_blank" title="Instagram">
                             <FaInstagram className="lg:text-2xl text-xl"/>
                         </a>
-                        <a className="hover:text-gray-600 px-3" href="https://drive.google.com/file/d/1qgclhUeF2NeUw2DEmD2XgXcDVrdDDbwI/view?usp=sharing" target="_blank" title="CV">
+                        <a className="hover:text-gray-600 px-3" href="https://drive.google.com/file/d/1S7zp88fVS1_M12OGLRcPLEEh0V8IDEbp/view?usp=sharing" target="_blank" title="CV">
                             <FaRegFilePdf className="lg:text-2xl text-xl"/> 
                         </a>
                     </div>
