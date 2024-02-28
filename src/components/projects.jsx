@@ -22,7 +22,6 @@ import php_icon from "../img/small-tech-icons/php.png"
 import rabbitmq_icon from "../img/small-tech-icons/rabbitmq.png"
 
 import { FaBeer, FaGithub } from 'react-icons/fa';
-import ProjectModal from "./projectModal";
 import Modal from "./modal";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -52,6 +51,7 @@ function Projects() {
             date: "May - Jun, 2023",
             repo: "https://github.com/C23-CT02",
             images: [
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/thumbnail.png",
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/login.jpg",
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/google.jpg",
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/evomo/home.jpg",
@@ -80,10 +80,11 @@ function Projects() {
             desc: "An application for PLABS.id that provides features such as attendance management, location based absent, \
             payroll management, salary slip document generator, activity reports, and more.\
             Responsible as Lead Programmer on managing and controlling 4 teammates on development process.",
-            position: "Fullstack Developer",
+            position: "Full Stack Developer",
             date: "Feb - Jun, 2023",
             repo: "",
             images: [
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/plabs/thumbnail.png",
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/plabs/login.png",
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/plabs/dashboard_admin.png",
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/plabs/dashboard_admin_2.png",
@@ -103,13 +104,17 @@ function Projects() {
             ],
         },
         {
-            id: "RumahSehat (Mobile)",
+            id: "RumahSehat",
             desc: "RumahSehat is a Flutter-based application that provides features for patients to support hospitals or clinics such as making an appointment, \
             viewing bills, viewing recipes, and viewing upcoming appointments.",
-            position: "Mobile Developer",
+            position: "Full Stack Developer",
             date: "Nov - Dec, 2023",
             repo: "https://gitlab.cs.ui.ac.id/david.johan/ta_a_ori_55/-/tree/main/rumahSehat_mobile",
             images: [
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/thumbnail.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-web/rumahsehatweb-login.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-web/rumahsehatweb-home.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-web/rumahsehatweb-chart.png",
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/login.png",
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/home.png",
                 "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/profile.png",
@@ -123,25 +128,7 @@ function Projects() {
             stacks: [
                 fluttter_icon,
                 spring_icon,
-                mysql_icon
-            ],
-        },
-        {
-            id: "RumahSehat (Website)",
-            desc: "RumahSehat is a website designated for hospital staffs that provides features to support hospitals or clinics such as maintaining appointments, \
-            viewing bills, viewing recipes, and viewing upcoming appointments.",
-            position: "Fullstack Developer",
-            date: "Nov - Dec, 2023",
-            repo: "https://gitlab.cs.ui.ac.id/david.johan/ta_a_ori_55/-/tree/main/rumahSehat",
-            images: [
-                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-web/rumahsehatweb-login.png",
-                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-web/rumahsehatweb-home.png",
-                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-web/rumahsehatweb-chart.png"
-            ],
-            thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/rumahsehat-mobile/thumbnail.png",
-            stacks: [
                 bootstrap_icon,
-                spring_icon,
                 mysql_icon
             ],
         },
