@@ -75,6 +75,59 @@ function Projects() {
             ],
         },
         {
+            id: "Github Users Explorer",
+            desc: "The GitHub Users Explorer App is an Android app created as the final submission for the \"Belajar Fundamental Aplikasi Android\" Dicoding course.\
+            The GitHub Users Explorer App is an Android application built with Kotlin that leverages the GitHub API to provide users with the ability to explore GitHub profiles.",
+            position: "Mobile Developer",
+            date: "Feb - May, 2023",
+            repo: "https://github.com/davidjohanhp/github-users",
+            images: [
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/githubuser/thumbnail.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/githubuser/Fundamental%20Aplikasi%20Android%20-%20home.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/githubuser/Fundamental%20Aplikasi%20Android%20-%20detail%201.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/githubuser/Fundamental%20Aplikasi%20Android%20-%20detail%202.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/githubuser/Fundamental%20Aplikasi%20Android%20-%20fav.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/githubuser/Fundamental%20Aplikasi%20Android%20-%20search.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/githubuser/Fundamental%20Aplikasi%20Android%20-%20setting.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/githubuser/Fundamental%20Aplikasi%20Android%20-%20dark.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/githubuser/Fundamental%20Aplikasi%20Android%20-%20detail%20dark.png",
+
+            ],
+            thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/githubuser/thumbnail.png",
+            stacks: [
+                kotlin_icon,
+                // spring_icon,
+                // bootstrap_icon,
+                // mysql_icon
+            ],
+        },
+        {
+            id: "Johan Story",
+            desc: "The Johan Story Application is an Android app created as the final submission for the \"Belajar Pengembangan Aplikasi Android Intermediate\" Dicoding course. \
+            This app is designed to demonstrate advanced Android development skills, including user authentication, story creation, and location services.",
+            position: "Mobile Developer",
+            date: "Feb - May, 2023",
+            repo: "https://github.com/davidjohanhp/johan-story",
+            images: [
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/johanstory/thumbnail.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/johanstory/Aplikasi%20Android%20Intermediate%20-%20login.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/johanstory/Aplikasi%20Android%20Intermediate%20-%20regis.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/johanstory/Aplikasi%20Android%20Intermediate%20-%20home.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/johanstory/Aplikasi%20Android%20Intermediate%20-%20explore.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/johanstory/Aplikasi%20Android%20Intermediate%20-%20upload.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/johanstory/Aplikasi%20Android%20Intermediate%20-%20cam.png",
+                "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/johanstory/Aplikasi%20Android%20Intermediate%20-%20setting.png",
+
+            ],
+            thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/projects/johanstory/thumbnail.png",
+            stacks: [
+                kotlin_icon,
+                // spring_icon,
+                // bootstrap_icon,
+                // mysql_icon
+            ],
+        },
+        {
             id: "Emplova",
             title: "Emplova - PLABS.ID HR Management System",
             desc: "An application for PLABS.id that provides features such as attendance management, location based absent, \
@@ -155,7 +208,7 @@ function Projects() {
                 id: "CrescentRating & HalalTrip",
                 desc: "CrescentRating is the world's leading authority on halal-friendly travel. Responsible as Frontend Developer on maintaining the CrescentRating & HalalTrip website. Worked closely with the UI/UX designer and other stakeholders.",
                 position: "Frontend Developer",
-                date: "Jul, 2023 - Nov, 2023",
+                date: "Jul - Nov, 2023",
                 images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/crescent/thumbnail.png"],
                 thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/crescent/thumbnail.png",
                 stacks: [
@@ -172,7 +225,7 @@ function Projects() {
                 Assist bug fixing on Computerized Maintenance Management System (CMMS) mobile application with Flutter. \
                 Worked closely with the UI/UX designer and other stakeholders.",
                 position: "Mobile Developer",
-                date: "Jul, 2023 - Sep, 2023",
+                date: "Jul - Sep, 2023",
                 images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/telkom/thumbnail.png"],
                 thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/telkom/thumbnail.png",
                 stacks: [
@@ -189,7 +242,10 @@ function Projects() {
                 Selected as the Best Team at Bangkit Company Capstone Project in collaboration with Evomo and as the top 1000 performing students in English courses & tests.",
                 position: "Mobile Developer Cohort",
                 date: "Feb - Jul, 2023",
-                images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/bangkit/thumbnail.png"],
+                images: ["https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/bangkit/thumbnail.png",
+            "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/bangkit/certif-1.png",
+        "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/bangkit/certif-2.png",
+    "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/bangkit/certif-3.png"],
                 thumbnail: "https://raw.githubusercontent.com/davidjohanhp/portfolio/master/src/img/works/bangkit/thumbnail.png",
                 stacks: [
                     android_icon,
@@ -325,6 +381,7 @@ function Projects() {
                                                         <div className="sm:mt-0 mt-5">
                                                             <img onClick={ () => onClick(content)} src={content.thumbnail} className="rounded-lg" 
                                                                 onLoad={handleImageLoaded}
+                                                                alt={`${content.id} Thumbnail`}
                                                             />
                                                             <div>
                                                                 <span className={
