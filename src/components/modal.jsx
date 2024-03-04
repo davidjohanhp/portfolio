@@ -79,7 +79,7 @@ export default function Modal({open, onClose, experience}) {
                                                     <img
                                                     src={image}
                                                     className={`max-h-64  w-full object-contain`}
-                                                    alt={`Image ${index}`}
+                                                    alt={`Screenshot ${index}`}
                                                     />
                                                 </SwiperSlide>
                                                 ))}
